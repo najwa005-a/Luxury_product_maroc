@@ -6,31 +6,15 @@
 
 <title>Luxury Products Maroc</title>
 
-<meta name="description"
-content="Luxury Products Maroc — Les meilleurs produits de France et d'Espagne, livrés partout au Maroc.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-:root{
-    --pink:#d9a7b6;
-    --pink-dark:#b77c91;
-    --nude:#fbf3f0;
-    --cream:#fffaf8;
-    --gold:#b7955b;
-    --dark:#211b1d;
-    --grey:#777;
-    --white:#fff;
-}
-
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
 html{
@@ -39,8 +23,8 @@ html{
 
 body{
     font-family:'Montserrat',sans-serif;
-    background:var(--cream);
-    color:var(--dark);
+    background:#fffaf8;
+    color:#211b1d;
 }
 
 a{
@@ -54,34 +38,47 @@ textarea{
     font-family:inherit;
 }
 
-/* ================= LOADER ================= */
+:root{
+    --pink:#d7a5b5;
+    --pink2:#b9788d;
+    --gold:#b7965c;
+    --cream:#fffaf8;
+    --dark:#211b1d;
+}
+
+/* LOADER */
 
 .loader{
     position:fixed;
     inset:0;
-    z-index:99999;
     background:#fffaf8;
+    z-index:99999;
     display:flex;
-    justify-content:center;
-    align-items:center;
     flex-direction:column;
-    animation:loaderOut 1s ease 2.3s forwards;
+    align-items:center;
+    justify-content:center;
+    transition:opacity .7s ease;
 }
 
-.loader-logo{
+.loader.hide{
+    opacity:0;
+    pointer-events:none;
+}
+
+.loader-title{
     font-family:'Cormorant Garamond',serif;
-    font-size:55px;
-    letter-spacing:8px;
+    font-size:45px;
+    letter-spacing:5px;
 }
 
-.loader-logo span{
+.loader-title span{
     color:var(--gold);
 }
 
 .loader-sub{
+    color:var(--gold);
     font-size:8px;
     letter-spacing:5px;
-    color:var(--gold);
     margin-top:5px;
 }
 
@@ -90,30 +87,23 @@ textarea{
     height:1px;
     background:#ddd;
     margin-top:25px;
+    overflow:hidden;
 }
 
 .loader-line span{
     display:block;
     height:100%;
-    width:0;
+    width:100%;
     background:var(--gold);
-    animation:loading 2s ease forwards;
+    animation:load 2s ease;
 }
 
-@keyframes loading{
-    to{
-        width:100%;
-    }
+@keyframes load{
+    from{transform:translateX(-100%)}
+    to{transform:translateX(0)}
 }
 
-@keyframes loaderOut{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
-}
-
-/* ================= HEADER ================= */
+/* HEADER */
 
 header{
     position:fixed;
@@ -121,25 +111,25 @@ header{
     left:0;
     right:0;
     z-index:1000;
-    background:rgba(255,250,248,.92);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(183,149,91,.15);
+    background:rgba(255,250,248,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #eee0e0;
 }
 
 .nav{
-    max-width:1400px;
+    max-width:1300px;
     margin:auto;
-    padding:17px 5%;
+    min-height:72px;
+    padding:0 25px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
     font-family:'Cormorant Garamond',serif;
-    font-size:28px;
+    font-size:27px;
     letter-spacing:3px;
-    font-weight:600;
 }
 
 .logo span{
@@ -148,73 +138,71 @@ header{
 
 nav{
     display:flex;
-    gap:27px;
+    gap:25px;
 }
 
 nav a{
     font-size:9px;
-    text-transform:uppercase;
     letter-spacing:1.5px;
-    transition:.3s;
+    text-transform:uppercase;
 }
 
 nav a:hover{
-    color:var(--pink-dark);
+    color:var(--pink2);
 }
 
 .menu{
     display:none;
-    border:0;
     background:none;
+    border:0;
     font-size:25px;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 
 .hero{
     min-height:100vh;
-    padding:150px 7% 80px;
+    padding:130px 7% 70px;
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.1fr .9fr;
     align-items:center;
-    gap:60px;
-
+    gap:50px;
     background:
-    radial-gradient(circle at 85% 20%,rgba(217,167,182,.3),transparent 30%),
-    radial-gradient(circle at 10% 80%,rgba(244,225,220,.5),transparent 35%);
+        radial-gradient(circle at 80% 20%,#efd9e0 0,transparent 30%),
+        radial-gradient(circle at 10% 80%,#f8e8e2 0,transparent 35%);
 }
 
 .eyebrow{
     color:var(--gold);
-    font-size:9px;
-    letter-spacing:4px;
     text-transform:uppercase;
-    margin-bottom:20px;
+    letter-spacing:4px;
+    font-size:9px;
+    margin-bottom:18px;
 }
 
 .hero h1{
     font-family:'Cormorant Garamond',serif;
+    font-size:clamp(60px,8vw,105px);
     font-weight:500;
-    font-size:clamp(65px,8vw,110px);
-    line-height:.83;
+    line-height:.82;
 }
 
 .hero h1 span{
-    color:var(--pink-dark);
+    color:var(--pink2);
     font-style:italic;
 }
 
-.hero-text{
+.hero p{
     max-width:570px;
-    color:#70696a;
+    margin:28px 0;
+    color:#756d6f;
     font-size:11px;
     line-height:2;
-    margin:28px 0;
 }
 
 .buttons{
     display:flex;
-    gap:12px;
+    gap:10px;
     flex-wrap:wrap;
 }
 
@@ -222,12 +210,12 @@ nav a:hover{
     display:inline-flex;
     justify-content:center;
     align-items:center;
-    padding:15px 24px;
     border:0;
     cursor:pointer;
+    padding:15px 25px;
     font-size:9px;
-    text-transform:uppercase;
     letter-spacing:1.4px;
+    text-transform:uppercase;
     transition:.3s;
 }
 
@@ -237,8 +225,8 @@ nav a:hover{
 }
 
 .btn-dark:hover{
-    background:var(--pink-dark);
-    transform:translateY(-3px);
+    background:var(--pink2);
+    transform:translateY(-2px);
 }
 
 .btn-light{
@@ -248,67 +236,63 @@ nav a:hover{
 
 .btn-light:hover{
     border-color:var(--gold);
-    transform:translateY(-3px);
 }
 
-/* HERO VISUAL */
+/* HERO CARDS */
 
-.hero-visual{
-    height:560px;
+.visual{
     position:relative;
+    height:520px;
 }
 
-.hero-box{
+.visual-card{
     position:absolute;
-    width:300px;
-    height:400px;
+    width:280px;
+    height:380px;
     background:white;
-    box-shadow:0 30px 70px rgba(50,30,35,.13);
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    box-shadow:0 30px 70px rgba(50,30,35,.15);
     overflow:hidden;
 }
 
-.hero-box img{
+.visual-card img{
     width:100%;
     height:100%;
     object-fit:cover;
 }
 
-.hero-box.one{
-    right:5%;
-    top:3%;
-    transform:rotate(6deg);
+.visual-card.one{
+    right:2%;
+    top:0;
+    transform:rotate(5deg);
 }
 
-.hero-box.two{
-    left:4%;
-    bottom:3%;
-    transform:rotate(-6deg);
+.visual-card.two{
+    left:2%;
+    bottom:0;
+    transform:rotate(-5deg);
 }
 
-.hero-label{
+.visual-label{
     position:absolute;
-    bottom:20px;
-    left:20px;
-    right:20px;
-    background:rgba(255,255,255,.9);
-    padding:13px;
+    left:15px;
+    right:15px;
+    bottom:15px;
+    padding:12px;
+    background:rgba(255,255,255,.92);
     text-align:center;
     font-family:'Cormorant Garamond',serif;
-    font-size:25px;
+    font-size:22px;
 }
 
-/* ================= BENEFITS ================= */
+/* BENEFITS */
 
 .benefits{
     background:white;
-    padding:27px 6%;
+    padding:30px 7%;
 }
 
 .benefit-grid{
-    max-width:1300px;
+    max-width:1200px;
     margin:auto;
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -316,12 +300,12 @@ nav a:hover{
 
 .benefit{
     text-align:center;
-    padding:13px;
+    padding:12px;
 }
 
 .benefit-icon{
-    font-size:23px;
-    margin-bottom:8px;
+    font-size:24px;
+    margin-bottom:7px;
 }
 
 .benefit h4{
@@ -331,45 +315,43 @@ nav a:hover{
 }
 
 .benefit p{
-    font-size:8px;
     color:#888;
+    font-size:8px;
     margin-top:5px;
 }
 
-/* ================= SEARCH ================= */
+/* SEARCH */
 
-.search-area{
+.search-section{
     background:white;
     padding:35px 7%;
 }
 
 .search{
-    max-width:1000px;
+    max-width:900px;
     margin:auto;
-    display:flex;
     border:1px solid #ddd;
+    display:flex;
     background:white;
-    padding:5px;
 }
 
 .search input{
     flex:1;
+    padding:16px;
     border:0;
     outline:0;
-    padding:16px;
     font-size:10px;
 }
 
 .search button{
-    border:0;
+    padding:0 25px;
     background:var(--dark);
     color:white;
-    padding:0 25px;
+    border:0;
     cursor:pointer;
-    font-size:9px;
 }
 
-/* ================= SECTIONS ================= */
+/* SECTION */
 
 section{
     padding:90px 7%;
@@ -382,16 +364,16 @@ section{
 
 .section-title small{
     color:var(--gold);
-    font-size:9px;
     letter-spacing:4px;
     text-transform:uppercase;
+    font-size:9px;
 }
 
 .section-title h2{
     font-family:'Cormorant Garamond',serif;
     font-size:58px;
     font-weight:500;
-    margin:8px 0;
+    margin:7px 0;
 }
 
 .section-title p{
@@ -402,16 +384,18 @@ section{
     line-height:1.9;
 }
 
-/* ================= ORIGINS ================= */
+/* ORIGINS */
 
 .origins{
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:20px;
 }
 
 .origin{
-    min-height:300px;
+    min-height:310px;
     padding:40px;
     display:flex;
     flex-direction:column;
@@ -419,32 +403,26 @@ section{
 }
 
 .france{
-    background:linear-gradient(135deg,#f3e2e9,#fff);
+    background:linear-gradient(135deg,#f2dfe7,#fff);
 }
 
 .spain{
-    background:linear-gradient(135deg,#f3e1cc,#fff);
-}
-
-.origin-icon{
-    position:absolute;
-    font-size:55px;
+    background:linear-gradient(135deg,#f2dfca,#fff);
 }
 
 .origin h3{
     font-family:'Cormorant Garamond',serif;
-    font-size:52px;
+    font-size:55px;
 }
 
 .origin p{
-    max-width:500px;
     color:#777;
     font-size:10px;
     line-height:1.9;
     margin:10px 0 20px;
 }
 
-/* ================= PRODUCTS ================= */
+/* PRODUCTS */
 
 .filters{
     display:flex;
@@ -455,13 +433,13 @@ section{
 }
 
 .filter{
-    border:1px solid #ddd;
     background:white;
+    border:1px solid #ddd;
     padding:10px 17px;
-    font-size:8px;
-    letter-spacing:1px;
-    text-transform:uppercase;
     cursor:pointer;
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
 
 .filter.active,
@@ -480,20 +458,20 @@ section{
 
 .product{
     background:white;
-    border:1px solid #eee6e2;
-    transition:.35s;
+    border:1px solid #eee4e1;
+    transition:.3s;
     overflow:hidden;
 }
 
 .product:hover{
-    transform:translateY(-7px);
-    box-shadow:0 25px 50px rgba(60,30,40,.1);
+    transform:translateY(-6px);
+    box-shadow:0 20px 50px rgba(50,30,35,.12);
 }
 
 .product-image{
-    height:300px;
+    height:310px;
+    background:#f5e9e6;
     position:relative;
-    background:#f5ece9;
     overflow:hidden;
 }
 
@@ -501,22 +479,21 @@ section{
     width:100%;
     height:100%;
     object-fit:cover;
-    display:block;
     transition:.5s;
 }
 
 .product:hover img{
-    transform:scale(1.04);
+    transform:scale(1.05);
 }
 
 .badge{
     position:absolute;
+    z-index:2;
     top:12px;
     left:12px;
-    z-index:2;
+    padding:6px 9px;
     background:var(--dark);
     color:white;
-    padding:6px 9px;
     font-size:7px;
     letter-spacing:1px;
 }
@@ -528,27 +505,27 @@ section{
 .brand{
     color:var(--gold);
     font-size:8px;
-    letter-spacing:2px;
     text-transform:uppercase;
+    letter-spacing:2px;
 }
 
 .product h3{
     font-family:'Cormorant Garamond',serif;
     font-size:25px;
-    margin:6px 0;
+    margin:5px 0;
 }
 
 .product p{
-    font-size:9px;
+    min-height:34px;
     color:#888;
+    font-size:9px;
     line-height:1.7;
-    min-height:32px;
 }
 
 .price{
-    font-size:13px;
+    margin:13px 0;
+    font-size:14px;
     font-weight:600;
-    margin:12px 0;
 }
 
 .product-actions{
@@ -557,15 +534,14 @@ section{
     gap:7px;
 }
 
-.product-actions button,
-.product-actions a{
-    padding:11px 6px;
+.product-actions a,
+.product-actions button{
+    padding:11px 5px;
     border:0;
     text-align:center;
-    font-size:7px;
-    letter-spacing:.7px;
-    text-transform:uppercase;
     cursor:pointer;
+    font-size:7px;
+    text-transform:uppercase;
 }
 
 .order{
@@ -574,17 +550,16 @@ section{
 }
 
 .request{
-    background:#f5e8eb;
-    color:var(--dark);
+    background:#f5e6eb;
 }
 
-/* ================= GIFT ================= */
+/* GIFT */
 
 .gift{
     background:#f8edf0;
 }
 
-.gift-grid{
+.gift-content{
     max-width:1100px;
     margin:auto;
     display:grid;
@@ -593,47 +568,39 @@ section{
     gap:70px;
 }
 
-.gift-visual{
-    height:350px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
 .gift-box{
-    width:230px;
+    width:240px;
     height:180px;
-    background:var(--pink-dark);
+    margin:auto;
+    background:var(--pink2);
     position:relative;
-    box-shadow:0 30px 60px rgba(90,40,50,.2);
+    box-shadow:0 30px 60px rgba(80,40,50,.2);
 }
 
 .gift-box:before{
     content:"";
     position:absolute;
-    left:50%;
-    top:0;
-    transform:translateX(-50%);
     width:35px;
     height:100%;
+    left:50%;
+    transform:translateX(-50%);
     background:var(--gold);
 }
 
 .gift-box:after{
     content:"";
     position:absolute;
-    top:50%;
-    left:0;
-    transform:translateY(-50%);
     height:35px;
     width:100%;
+    top:50%;
+    transform:translateY(-50%);
     background:var(--gold);
 }
 
 .gift-text small{
     color:var(--gold);
-    font-size:9px;
     letter-spacing:4px;
+    font-size:9px;
 }
 
 .gift-text h2{
@@ -650,38 +617,37 @@ section{
     margin-bottom:20px;
 }
 
-/* ================= CUSTOM REQUEST ================= */
+/* REQUEST */
 
-.custom{
+.request-section{
     background:var(--dark);
     color:white;
 }
 
-.custom-container{
+.request-container{
     max-width:900px;
     margin:auto;
 }
 
-.custom-title{
+.request-title{
     text-align:center;
     margin-bottom:35px;
 }
 
-.custom-title small{
+.request-title small{
     color:var(--gold);
-    font-size:9px;
     letter-spacing:4px;
-    text-transform:uppercase;
+    font-size:9px;
 }
 
-.custom-title h2{
+.request-title h2{
     font-family:'Cormorant Garamond',serif;
     font-size:57px;
     font-weight:500;
     margin:10px 0;
 }
 
-.custom-title p{
+.request-title p{
     color:#aaa;
     font-size:10px;
     line-height:1.9;
@@ -706,11 +672,10 @@ section{
     outline:none;
     padding:14px;
     font-size:10px;
-    margin-bottom:14px;
 }
 
 .form textarea{
-    min-height:120px;
+    min-height:100px;
     resize:vertical;
 }
 
@@ -718,29 +683,27 @@ section{
     grid-column:1/-1;
 }
 
-.file-box{
-    border:1px dashed #c9adb5;
+.file{
+    border:1px dashed #c69ba8;
     background:#fff8fa;
     padding:25px;
     text-align:center;
-    margin-bottom:15px;
 }
 
-.file-box strong{
+.file strong{
     display:block;
     font-family:'Cormorant Garamond',serif;
-    font-size:25px;
-    margin-bottom:7px;
+    font-size:24px;
+    margin-bottom:5px;
 }
 
-.file-box p{
+.file p{
     color:#888;
-    font-size:9px;
+    font-size:8px;
     margin-bottom:15px;
 }
 
-.file-box input{
-    margin:0;
+.file input{
     border:0;
     padding:0;
 }
@@ -750,23 +713,13 @@ section{
     align-items:center;
     gap:8px;
     font-size:9px;
-    margin-bottom:15px;
 }
 
 .checkbox input{
     width:auto;
-    margin:0;
 }
 
-.gift-message{
-    display:block;
-}
-
-.gift-message.hide{
-    display:none;
-}
-
-/* ================= CONTACT ================= */
+/* CONTACT */
 
 .contact-grid{
     max-width:1200px;
@@ -779,8 +732,8 @@ section{
 .contact-card{
     background:white;
     border:1px solid #eee;
-    text-align:center;
     padding:28px 15px;
+    text-align:center;
     transition:.3s;
 }
 
@@ -791,18 +744,18 @@ section{
 
 .contact-icon{
     font-size:27px;
-    margin-bottom:9px;
 }
 
 .contact-card h3{
     font-family:'Cormorant Garamond',serif;
     font-size:24px;
+    margin-top:8px;
 }
 
 .contact-card p{
-    font-size:8px;
     color:#888;
-    margin:7px 0 13px;
+    font-size:8px;
+    margin:6px 0 12px;
 }
 
 .contact-card a{
@@ -810,7 +763,7 @@ section{
     font-weight:600;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer{
     background:#181415;
@@ -819,7 +772,7 @@ footer{
 }
 
 .footer-grid{
-    max-width:1250px;
+    max-width:1200px;
     margin:auto;
     display:grid;
     grid-template-columns:2fr 1fr 1fr;
@@ -837,11 +790,11 @@ footer{
 }
 
 footer p{
-    max-width:450px;
+    max-width:430px;
     color:#999;
     font-size:9px;
     line-height:1.9;
-    margin-top:12px;
+    margin-top:10px;
 }
 
 footer h4{
@@ -858,7 +811,7 @@ footer a{
 }
 
 .bottom{
-    max-width:1250px;
+    max-width:1200px;
     margin:30px auto 0;
     padding-top:18px;
     border-top:1px solid #333;
@@ -867,12 +820,12 @@ footer a{
     font-size:8px;
 }
 
-/* ================= FLOATING ================= */
+/* FLOATING */
 
 .floating{
     position:fixed;
-    right:17px;
-    bottom:17px;
+    right:16px;
+    bottom:16px;
     z-index:5000;
     display:flex;
     flex-direction:column;
@@ -884,16 +837,11 @@ footer a{
     height:48px;
     border-radius:50%;
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     color:white;
-    font-size:19px;
-    box-shadow:0 10px 25px rgba(0,0,0,.18);
-    transition:.3s;
-}
-
-.float:hover{
-    transform:scale(1.1);
+    font-size:20px;
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
 .whatsapp{
@@ -908,37 +856,37 @@ footer a{
     background:#111;
 }
 
-/* ================= THANK YOU ================= */
+/* THANK YOU */
 
-.thank-you{
+.thank{
+    display:none;
     position:fixed;
     inset:0;
     z-index:999999;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(217,167,182,.25),transparent 30%),
-    radial-gradient(circle at 80% 80%,rgba(244,225,220,.4),transparent 30%),
-    #fffaf8;
-    display:none;
-    justify-content:center;
+    background:rgba(255,250,248,.98);
     align-items:center;
+    justify-content:center;
     padding:20px;
 }
 
+.thank.show{
+    display:flex;
+}
+
 .thank-card{
-    max-width:650px;
+    max-width:600px;
     width:100%;
     background:white;
-    padding:55px 30px;
+    padding:50px 30px;
     text-align:center;
-    box-shadow:0 30px 80px rgba(50,30,35,.12);
-    border:1px solid rgba(183,149,91,.2);
+    box-shadow:0 30px 80px rgba(50,30,35,.13);
 }
 
 .thank-logo{
     font-family:'Cormorant Garamond',serif;
-    font-size:33px;
-    letter-spacing:4px;
-    margin-bottom:30px;
+    font-size:30px;
+    letter-spacing:3px;
+    margin-bottom:25px;
 }
 
 .thank-logo span{
@@ -946,30 +894,28 @@ footer a{
 }
 
 .check{
-    width:70px;
-    height:70px;
+    width:65px;
+    height:65px;
     border-radius:50%;
     background:#f8edf0;
-    border:1px solid var(--pink);
     display:flex;
-    justify-content:center;
     align-items:center;
-    margin:auto auto 22px;
+    justify-content:center;
+    margin:auto;
     font-size:28px;
 }
 
-.thank-small{
+.thank-card small{
     color:var(--gold);
-    font-size:8px;
     letter-spacing:3px;
-    text-transform:uppercase;
+    font-size:8px;
 }
 
-.thank-card h1{
+.thank-card h2{
     font-family:'Cormorant Garamond',serif;
-    font-size:58px;
+    font-size:55px;
     font-weight:500;
-    margin:8px 0 15px;
+    margin:7px 0 12px;
 }
 
 .thank-card p{
@@ -978,130 +924,113 @@ footer a{
     line-height:1.9;
 }
 
-.thank-info{
-    margin:22px 0;
-    padding:18px;
-    background:#fff8fa;
-}
-
-.thank-info strong{
-    display:block;
-    font-family:'Cormorant Garamond',serif;
-    font-size:22px;
-    margin-bottom:5px;
-}
-
-.thank-info span{
-    color:#777;
-    font-size:8px;
-}
-
 .thank-buttons{
+    margin-top:25px;
     display:flex;
     justify-content:center;
     gap:10px;
     flex-wrap:wrap;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
-.products{
-    grid-template-columns:repeat(2,1fr);
-}
+    nav{
+        display:none;
+    }
 
-.contact-grid{
-    grid-template-columns:repeat(2,1fr);
-}
+    .menu{
+        display:block;
+    }
 
-}
+    .hero{
+        grid-template-columns:1fr;
+    }
 
-@media(max-width:800px){
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-nav{
-    display:none;
-}
+    .benefit-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-.menu{
-    display:block;
-}
+    .contact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
-.hero{
-    grid-template-columns:1fr;
-    padding-top:125px;
-}
+    .gift-content,
+    .origins{
+        grid-template-columns:1fr;
+    }
 
-.hero-visual{
-    height:500px;
-}
-
-.origins,
-.gift-grid{
-    grid-template-columns:1fr;
-}
-
-.benefit-grid{
-    grid-template-columns:1fr 1fr;
-}
-
-.footer-grid{
-    grid-template-columns:1fr;
-}
-
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 @media(max-width:550px){
 
-.logo{
-    font-size:20px;
-}
+    .logo{
+        font-size:20px;
+    }
 
-.hero h1{
-    font-size:58px;
-}
+    .hero{
+        padding-left:5%;
+        padding-right:5%;
+    }
 
-.hero-box{
-    width:205px;
-    height:285px;
-}
+    .hero h1{
+        font-size:60px;
+    }
 
-.products,
-.contact-grid{
-    grid-template-columns:1fr;
-}
+    .visual{
+        height:430px;
+    }
 
-.form-grid{
-    grid-template-columns:1fr;
-}
+    .visual-card{
+        width:205px;
+        height:285px;
+    }
 
-.full{
-    grid-column:auto;
-}
+    .products{
+        grid-template-columns:1fr;
+    }
 
-.section-title h2,
-.custom-title h2{
-    font-size:45px;
-}
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
 
-.gift-text h2{
-    font-size:47px;
-}
+    .form-grid{
+        grid-template-columns:1fr;
+    }
 
-.search{
-    flex-direction:column;
-}
+    .full{
+        grid-column:auto;
+    }
 
-.search button{
-    padding:15px;
-}
+    .search{
+        flex-direction:column;
+    }
 
-.thank-card h1{
-    font-size:45px;
-}
+    .search button{
+        padding:15px;
+    }
 
-}
+    .section-title h2,
+    .request-title h2{
+        font-size:45px;
+    }
 
+    .gift-text h2{
+        font-size:47px;
+    }
+
+    .thank-card h2{
+        font-size:45px;
+    }
+}
 </style>
 </head>
 
@@ -1109,9 +1038,9 @@ nav{
 
 <!-- LOADER -->
 
-<div class="loader">
+<div class="loader" id="loader">
 
-    <div class="loader-logo">
+    <div class="loader-title">
         LUXURY <span>PRODUCTS</span>
     </div>
 
@@ -1136,16 +1065,20 @@ nav{
     LUXURY <span>PRODUCTS</span>
 </a>
 
-<nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#produits">Produits</a>
-    <a href="#origines">France & Espagne</a>
-    <a href="#cadeau">Cadeau</a>
-    <a href="#demande">Sur demande</a>
-    <a href="#contact">Contact</a>
+<nav id="navigation">
+
+<a href="#accueil">Accueil</a>
+<a href="#produits">Produits</a>
+<a href="#origines">France & Espagne</a>
+<a href="#cadeau">Cadeau</a>
+<a href="#demande">Sur demande</a>
+<a href="#contact">Contact</a>
+
 </nav>
 
-<button class="menu" onclick="toggleMenu()">☰</button>
+<button class="menu" onclick="menu()">
+    ☰
+</button>
 
 </div>
 
@@ -1168,11 +1101,10 @@ nav{
     <span>accessible.</span>
 </h1>
 
-<p class="hero-text">
-    Découvrez les meilleurs produits de France 🇫🇷
-    et d'Espagne 🇪🇸 sélectionnés avec soin.
-    Des produits tendance, beauté, parfums,
-    coffrets et mode à des prix exceptionnels.
+<p>
+    Découvrez une sélection de produits tendance
+    provenant de France 🇫🇷 et d'Espagne 🇪🇸 :
+    parfums, beauté, coffrets, mode et bien plus.
     <br><br>
     🇲🇦 Livraison partout au Maroc
     <br>
@@ -1194,25 +1126,46 @@ nav{
 </div>
 
 
-<div class="hero-visual">
+<div class="visual">
 
-<div class="hero-box one">
+<div class="visual-card one">
 
-<img src="images/rituals.jpg"
-     alt="Rituals">
+<div style="
+height:100%;
+background:linear-gradient(135deg,#ead1da,#fff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:'Cormorant Garamond',serif;
+font-size:45px;
+color:#b9788d;
+">
+Rituals
+</div>
 
-<div class="hero-label">
+<div class="visual-label">
     Rituals Selection
 </div>
 
 </div>
 
-<div class="hero-box two">
 
-<img src="images/garden-bouquet.jpg"
-     alt="Garden Bouquet">
+<div class="visual-card two">
 
-<div class="hero-label">
+<div style="
+height:100%;
+background:linear-gradient(135deg,#eadccf,#fff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-family:'Cormorant Garamond',serif;
+font-size:38px;
+color:#a77b55;
+">
+Garden<br>Bouquet
+</div>
+
+<div class="visual-label">
     Gift Collection
 </div>
 
@@ -1260,18 +1213,18 @@ nav{
 
 <!-- SEARCH -->
 
-<div class="search-area">
+<div class="search-section">
 
 <div class="search">
 
 <input
-    id="searchInput"
-    type="text"
-    placeholder="Rechercher un produit..."
-    oninput="searchProducts()">
+id="search"
+type="text"
+placeholder="Rechercher un produit..."
+oninput="searchProducts()">
 
 <button onclick="searchProducts()">
-    RECHERCHER
+RECHERCHER
 </button>
 
 </div>
@@ -1294,9 +1247,9 @@ nav{
 </h2>
 
 <p>
-    Vous cherchez un produit qui n'est pas encore
-    affiché sur notre boutique ? Envoyez-nous sa photo
-    et nous essayerons de vous le trouver.
+    Vous avez vu un produit en France ou en Espagne
+    que vous souhaitez commander ?
+    Envoyez-nous simplement sa photo.
 </p>
 
 </div>
@@ -1306,15 +1259,17 @@ nav{
 
 <div class="origin france">
 
-<h3>France 🇫🇷</h3>
+<h3>
+    France 🇫🇷
+</h3>
 
 <p>
-    Beauté, parfums, mode, coffrets,
+    Beauté, parfums, coffrets, mode,
     skincare et nouveautés.
 </p>
 
 <a href="#demande" class="btn btn-dark">
-    Demander un produit
+    Trouver un produit
 </a>
 
 </div>
@@ -1322,15 +1277,17 @@ nav{
 
 <div class="origin spain">
 
-<h3>Espagne 🇪🇸</h3>
+<h3>
+    Espagne 🇪🇸
+</h3>
 
 <p>
-    Les meilleures trouvailles de beauté,
+    Les meilleures trouvailles beauté,
     parfumerie, mode et lifestyle.
 </p>
 
 <a href="#demande" class="btn btn-dark">
-    Demander un produit
+    Trouver un produit
 </a>
 
 </div>
@@ -1347,15 +1304,16 @@ nav{
 <div class="section-title">
 
 <small>
-    Sélection Luxury Products
+    Notre sélection
 </small>
 
 <h2>
-    Nos produits
+    Produits Luxury
 </h2>
 
 <p>
-    Quelques-unes de nos trouvailles disponibles.
+    Découvrez quelques produits disponibles
+    chez Luxury Products Maroc.
 </p>
 
 </div>
@@ -1363,86 +1321,104 @@ nav{
 
 <div class="filters">
 
-<button class="filter active"
-onclick="filterProducts('all',this)">
-    Tous
+<button class="filter active" onclick="filter('all',this)">
+Tous
 </button>
 
-<button class="filter"
-onclick="filterProducts('parfum',this)">
-    Parfums
+<button class="filter" onclick="filter('parfum',this)">
+Parfums
 </button>
 
-<button class="filter"
-onclick="filterProducts('coffret',this)">
-    Coffrets
+<button class="filter" onclick="filter('coffret',this)">
+Coffrets
 </button>
 
-<button class="filter"
-onclick="filterProducts('rituals',this)">
-    Rituals
+<button class="filter" onclick="filter('rituals',this)">
+Rituals
 </button>
 
-<button class="filter"
-onclick="filterProducts('mode',this)">
-    Mode
+<button class="filter" onclick="filter('mode',this)">
+Mode
 </button>
 
 </div>
 
 
-<div class="products" id="productGrid">
+<div class="products" id="products">
 
 
-<!-- DIAMANT -->
+<!-- PRODUCT 1 -->
 
-<div class="product"
-data-category="parfum"
-data-name="diamant mercadona parfum">
+<div class="product" data-category="parfum" data-name="parfum diamant mercadona">
 
 <div class="product-image">
 
 <div class="badge">
-    ESPAGNE 🇪🇸
+🇪🇸 ESPAGNE
 </div>
 
-<img src="images/diamant.jpg"
-alt="Parfum Diamant Mercadona">
+<div style="
+height:100%;
+background:linear-gradient(135deg,#e7d7df,#fff);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+">
+
+<div style="font-size:70px;">
+💎
+</div>
+
+<div style="
+font-family:'Cormorant Garamond',serif;
+font-size:32px;
+">
+DIAMANT
+</div>
+
+<div style="
+font-size:8px;
+letter-spacing:3px;
+color:#b7965c;
+">
+MERCADONA
+</div>
+
+</div>
 
 </div>
 
 <div class="product-info">
 
 <div class="brand">
-    Mercadona
+Mercadona
 </div>
 
 <h3>
-    Parfum Diamant
+Parfum Diamant
 </h3>
 
 <p>
-    Une fragrance élégante et féminine
-    sélectionnée en Espagne.
+Une fragrance élégante sélectionnée
+en Espagne.
 </p>
 
 <div class="price">
-    70 DH
+70 DH
 </div>
 
 <div class="product-actions">
 
 <a
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20suis%20intéressée%20par%20le%20Parfum%20Diamant%20à%2070%20DH."
+class="order"
 target="_blank"
-class="order">
-    Commander
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Parfum%20Diamant%20Mercadona%20à%2070%20DH.">
+Commander
 </a>
 
-<button
-class="request"
-onclick="chooseProduct('Parfum Diamant Mercadona')">
-    Demander
+<button class="request" onclick="selectProduct('Parfum Diamant Mercadona')">
+Demander
 </button>
 
 </div>
@@ -1452,54 +1428,78 @@ onclick="chooseProduct('Parfum Diamant Mercadona')">
 </div>
 
 
-<!-- GARDEN BOUQUET -->
+<!-- PRODUCT 2 -->
 
-<div class="product"
-data-category="coffret"
-data-name="garden bouquet coffret">
+<div class="product" data-category="coffret" data-name="coffret garden bouquet">
 
 <div class="product-image">
 
 <div class="badge">
-    GIFT 🎁
+🎁 GIFT
 </div>
 
-<img src="images/garden-bouquet.jpg"
-alt="Coffret Garden Bouquet">
+<div style="
+height:100%;
+background:linear-gradient(135deg,#e8d9ce,#fff);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+">
+
+<div style="font-size:65px;">
+🌸
+</div>
+
+<div style="
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+">
+GARDEN
+</div>
+
+<div style="
+font-size:9px;
+letter-spacing:3px;
+color:#a77b55;
+">
+BOUQUET
+</div>
+
+</div>
 
 </div>
 
 <div class="product-info">
 
 <div class="brand">
-    Garden Bouquet
+Garden Bouquet
 </div>
 
 <h3>
-    Coffret Garden Bouquet
+Coffret Garden Bouquet
 </h3>
 
 <p>
-    Coffret cadeau bien-être 7 pièces.
+Coffret cadeau composé de plusieurs
+produits.
 </p>
 
 <div class="price">
-    199 DH
+199 DH
 </div>
 
 <div class="product-actions">
 
 <a
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20suis%20intéressée%20par%20le%20Coffret%20Garden%20Bouquet%20à%20199%20DH."
+class="order"
 target="_blank"
-class="order">
-    Commander
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Coffret%20Garden%20Bouquet%20à%20199%20DH.">
+Commander
 </a>
 
-<button
-class="request"
-onclick="chooseProduct('Coffret Garden Bouquet')">
-    Demander
+<button class="request" onclick="selectProduct('Coffret Garden Bouquet')">
+Demander
 </button>
 
 </div>
@@ -1509,55 +1509,78 @@ onclick="chooseProduct('Coffret Garden Bouquet')">
 </div>
 
 
-<!-- RITUALS -->
+<!-- PRODUCT 3 -->
 
-<div class="product"
-data-category="rituals"
-data-name="rituals jing coffret">
+<div class="product" data-category="rituals" data-name="rituals">
 
 <div class="product-image">
 
 <div class="badge">
-    PREMIUM
+PREMIUM
 </div>
 
-<img src="images/rituals.jpg"
-alt="Rituals The Ritual of Jing">
+<div style="
+height:100%;
+background:linear-gradient(135deg,#d9d4c9,#fff);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+">
+
+<div style="font-size:65px;">
+🌿
+</div>
+
+<div style="
+font-family:'Cormorant Garamond',serif;
+font-size:35px;
+">
+RITUALS
+</div>
+
+<div style="
+font-size:8px;
+letter-spacing:3px;
+color:#777;
+">
+BODY • HOME • SOUL
+</div>
+
+</div>
 
 </div>
 
 <div class="product-info">
 
 <div class="brand">
-    Rituals
+Rituals
 </div>
 
 <h3>
-    The Ritual of Jing
+Rituals Coffret
 </h3>
 
 <p>
-    Coffret premium Rituals,
-    parfait comme cadeau.
+Une sélection premium parfaite
+pour offrir.
 </p>
 
 <div class="price">
-    380 DH
+380 DH
 </div>
 
 <div class="product-actions">
 
 <a
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20suis%20intéressée%20par%20le%20coffret%20Rituals%20à%20380%20DH."
+class="order"
 target="_blank"
-class="order">
-    Commander
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20coffret%20Rituals%20à%20380%20DH.">
+Commander
 </a>
 
-<button
-class="request"
-onclick="chooseProduct('Rituals The Ritual of Jing')">
-    Demander
+<button class="request" onclick="selectProduct('Rituals Coffret')">
+Demander
 </button>
 
 </div>
@@ -1567,54 +1590,77 @@ onclick="chooseProduct('Rituals The Ritual of Jing')">
 </div>
 
 
-<!-- PYJAMA -->
+<!-- PRODUCT 4 -->
 
-<div class="product"
-data-category="mode"
-data-name="primark pyjama">
+<div class="product" data-category="mode" data-name="pyjama primark">
 
 <div class="product-image">
 
 <div class="badge">
-    PRIMARK
+PRIMARK
 </div>
 
-<img src="images/primark-pyjama.jpg"
-alt="Pyjama Primark">
+<div style="
+height:100%;
+background:linear-gradient(135deg,#e8cbd4,#fff);
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+">
+
+<div style="font-size:70px;">
+🩷
+</div>
+
+<div style="
+font-family:'Cormorant Garamond',serif;
+font-size:31px;
+">
+PYJAMA
+</div>
+
+<div style="
+font-size:9px;
+letter-spacing:3px;
+color:#b9788d;
+">
+PRIMARK
+</div>
+
+</div>
 
 </div>
 
 <div class="product-info">
 
 <div class="brand">
-    Primark
+Primark
 </div>
 
 <h3>
-    Pyjama Primark
+Pyjama Primark
 </h3>
 
 <p>
-    Pyjama tendance et confortable.
+Pyjama tendance et confortable.
 </p>
 
 <div class="price">
-    170 DH
+170 DH
 </div>
 
 <div class="product-actions">
 
 <a
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20suis%20intéressée%20par%20le%20Pyjama%20Primark%20à%20170%20DH."
+class="order"
 target="_blank"
-class="order">
-    Commander
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Pyjama%20Primark%20à%20170%20DH.">
+Commander
 </a>
 
-<button
-class="request"
-onclick="chooseProduct('Pyjama Primark')">
-    Demander
+<button class="request" onclick="selectProduct('Pyjama Primark')">
+Demander
 </button>
 
 </div>
@@ -1633,9 +1679,9 @@ onclick="chooseProduct('Pyjama Primark')">
 
 <section class="gift" id="cadeau">
 
-<div class="gift-grid">
+<div class="gift-content">
 
-<div class="gift-visual">
+<div>
 
 <div class="gift-box"></div>
 
@@ -1644,22 +1690,21 @@ onclick="chooseProduct('Pyjama Primark')">
 <div class="gift-text">
 
 <small>
-    Une attention spéciale
+Une attention spéciale
 </small>
 
 <h2>
-    Emballage cadeau 🎁
+Emballage cadeau 🎁
 </h2>
 
 <p>
-    Votre commande est destinée à être offerte ?
-    Nous proposons un emballage cadeau élégant
-    et soigné, avec possibilité d'ajouter un petit
-    message personnalisé.
+Vous souhaitez offrir votre commande ?
+Nous proposons une possibilité d'emballage cadeau
+élégant avec un message personnalisé.
 </p>
 
 <a href="#demande" class="btn btn-dark">
-    Ajouter un emballage cadeau
+Ajouter un emballage cadeau
 </a>
 
 </div>
@@ -1669,128 +1714,92 @@ onclick="chooseProduct('Pyjama Primark')">
 </section>
 
 
-<!-- CUSTOM REQUEST -->
+<!-- REQUEST -->
 
-<section class="custom" id="demande">
+<section class="request-section" id="demande">
 
-<div class="custom-container">
+<div class="request-container">
 
-<div class="custom-title">
+<div class="request-title">
 
 <small>
-    Vous avez trouvé quelque chose ?
+Produit introuvable ?
 </small>
 
 <h2>
-    Envoyez-nous sa photo.
+Envoyez-nous sa photo.
 </h2>
 
 <p>
-    Vous avez vu un produit en France ou en Espagne
-    que vous souhaitez commander ?
-    Laissez-nous simplement sa photo 📸.
-    Nous vérifierons sa disponibilité et nous vous
-    communiquerons le prix.
+Vous avez vu un produit en France 🇫🇷 ou en Espagne 🇪🇸
+que vous voulez ?
+Envoyez simplement sa photo et nous vous répondrons
+avec la disponibilité et le prix.
 </p>
 
 </div>
 
 
-<form
-class="form"
-action="https://formsubmit.co/Najwa.elalaoui2005@gmail.com"
-method="POST"
-enctype="multipart/form-data"
-onsubmit="submitForm(event)">
-
-<input
-type="hidden"
-name="_subject"
-value="Nouvelle demande produit - Luxury Products Maroc">
-
-<input
-type="hidden"
-name="_captcha"
-value="false">
-
-<input
-type="hidden"
-name="_template"
-value="table">
-
-<input
-type="hidden"
-name="_next"
-value="https://luxury-product-maroc-9yrm.vercel.app/">
+<form class="form" onsubmit="sendRequest(event)">
 
 <div class="form-grid">
 
-
 <input
 type="text"
-name="Nom"
+id="name"
 placeholder="Votre nom *"
 required>
 
-
 <input
 type="tel"
-name="WhatsApp"
-placeholder="Votre numéro WhatsApp *"
+id="phone"
+placeholder="Votre WhatsApp *"
 required>
-
 
 <input
 type="email"
-name="Email"
+id="email"
 placeholder="Votre email">
-
 
 <input
 type="text"
-name="Ville"
+id="city"
 placeholder="Votre ville *"
 required>
-
 
 <div class="full">
 
 <input
-id="productName"
 type="text"
-name="Produit"
-placeholder="Nom du produit / marque">
+id="productName"
+placeholder="Nom du produit">
 
 </div>
-
 
 <div class="full">
 
 <textarea
-name="Message"
-placeholder="Décrivez le produit que vous recherchez..."></textarea>
+id="message"
+placeholder="Votre message..."></textarea>
 
 </div>
 
 
-<!-- PHOTO -->
-
 <div class="full">
 
-<div class="file-box">
+<div class="file">
 
 <strong>
-    📸 Envoyer la photo du produit
+📸 Photo du produit
 </strong>
 
 <p>
-    Choisissez directement une photo depuis
-    votre galerie ou prenez une photo.
+Choisissez une photo depuis votre téléphone.
 </p>
 
 <input
 type="file"
-name="Photo du produit"
+id="photo"
 accept="image/*">
 
 </div>
@@ -1798,19 +1807,14 @@ accept="image/*">
 </div>
 
 
-<!-- GIFT -->
-
 <div class="full">
 
 <label class="checkbox">
 
 <input
-id="giftCheck"
 type="checkbox"
-name="Emballage cadeau"
-value="Oui"
-checked
-onchange="toggleGift()">
+id="gift"
+checked>
 
 🎁 Je souhaite un emballage cadeau
 
@@ -1819,30 +1823,13 @@ onchange="toggleGift()">
 </div>
 
 
-<div
-id="giftMessage"
-class="full gift-message">
-
-<textarea
-name="Message cadeau"
-placeholder="Votre petit message cadeau (facultatif)..."></textarea>
-
-</div>
-
-
 <div class="full">
 
-<button
-type="submit"
-class="btn btn-dark"
-style="width:100%;">
-
+<button class="btn btn-dark" style="width:100%;">
 ✨ ENVOYER MA DEMANDE
-
 </button>
 
 </div>
-
 
 </div>
 
@@ -1860,16 +1847,16 @@ style="width:100%;">
 <div class="section-title">
 
 <small>
-    Luxury Products Maroc
+Luxury Products Maroc
 </small>
 
 <h2>
-    Restons connectés
+Restons connectés
 </h2>
 
 <p>
-    Une question, une commande ou une recherche ?
-    Contactez-nous directement.
+Une question, une commande ou une recherche ?
+Nous sommes disponibles.
 </p>
 
 </div>
@@ -1880,24 +1867,14 @@ style="width:100%;">
 
 <div class="contact-card">
 
-<div class="contact-icon">
-    💬
-</div>
+<div class="contact-icon">💬</div>
 
-<h3>
-    WhatsApp
-</h3>
+<h3>WhatsApp</h3>
 
-<p>
-    Commandes & renseignements
-</p>
+<p>Commandes & renseignements</p>
 
-<a
-href="https://wa.me/212778231455"
-target="_blank">
-
+<a href="https://wa.me/212778231455" target="_blank">
 +212 778 231 455
-
 </a>
 
 </div>
@@ -1905,23 +1882,14 @@ target="_blank">
 
 <div class="contact-card">
 
-<div class="contact-icon">
-    📧
-</div>
+<div class="contact-icon">📧</div>
 
-<h3>
-    Email
-</h3>
+<h3>Email</h3>
 
-<p>
-    Demandes personnalisées
-</p>
+<p>Demandes personnalisées</p>
 
-<a
-href="mailto:Najwa.elalaoui2005@gmail.com">
-
+<a href="mailto:Najwa.elalaoui2005@gmail.com">
 Najwa.elalaoui2005@gmail.com
-
 </a>
 
 </div>
@@ -1929,24 +1897,16 @@ Najwa.elalaoui2005@gmail.com
 
 <div class="contact-card">
 
-<div class="contact-icon">
-    📸
-</div>
+<div class="contact-icon">📸</div>
 
-<h3>
-    Instagram
-</h3>
+<h3>Instagram</h3>
 
-<p>
-    Nouveautés & arrivages
-</p>
+<p>Nouveautés & arrivages</p>
 
 <a
 href="https://www.instagram.com/luxury_product_maroc/"
 target="_blank">
-
 @luxury_product_maroc
-
 </a>
 
 </div>
@@ -1954,24 +1914,16 @@ target="_blank">
 
 <div class="contact-card">
 
-<div class="contact-icon">
-    🎵
-</div>
+<div class="contact-icon">🎵</div>
 
-<h3>
-    TikTok
-</h3>
+<h3>TikTok</h3>
 
-<p>
-    Nos vidéos
-</p>
+<p>Nos vidéos</p>
 
 <a
 href="https://www.tiktok.com/@luxury_mar"
 target="_blank">
-
 @Luxury_mar
-
 </a>
 
 </div>
@@ -1991,14 +1943,14 @@ target="_blank">
 <div>
 
 <div class="footer-logo">
-    LUXURY <span>PRODUCTS</span>
+LUXURY <span>PRODUCTS</span>
 </div>
 
 <p>
-    Les meilleurs produits de France 🇫🇷
-    et d'Espagne 🇪🇸 sélectionnés pour vous.
-    Livraison partout au Maroc 🇲🇦.
-    Emballage cadeau disponible 🎁.
+Les meilleurs produits de France 🇫🇷
+et d'Espagne 🇪🇸 sélectionnés pour vous.
+Livraison partout au Maroc 🇲🇦.
+Emballage cadeau disponible 🎁.
 </p>
 
 </div>
@@ -2007,24 +1959,13 @@ target="_blank">
 <div>
 
 <h4>
-    NAVIGATION
+NAVIGATION
 </h4>
 
-<a href="#accueil">
-    Accueil
-</a>
-
-<a href="#produits">
-    Produits
-</a>
-
-<a href="#cadeau">
-    Emballage cadeau
-</a>
-
-<a href="#demande">
-    Produit sur demande
-</a>
+<a href="#accueil">Accueil</a>
+<a href="#produits">Produits</a>
+<a href="#cadeau">Emballage cadeau</a>
+<a href="#demande">Produit sur demande</a>
 
 </div>
 
@@ -2032,23 +1973,23 @@ target="_blank">
 <div>
 
 <h4>
-    CONTACT
+CONTACT
 </h4>
 
 <a href="https://wa.me/212778231455">
-    WhatsApp
+WhatsApp
 </a>
 
 <a href="mailto:Najwa.elalaoui2005@gmail.com">
-    Email
+Email
 </a>
 
 <a href="https://www.instagram.com/luxury_product_maroc/">
-    Instagram
+Instagram
 </a>
 
 <a href="https://www.tiktok.com/@luxury_mar">
-    TikTok
+TikTok
 </a>
 
 </div>
@@ -2057,9 +1998,7 @@ target="_blank">
 
 
 <div class="bottom">
-
 ©️ 2026 Luxury Products Maroc — Tous droits réservés.
-
 </div>
 
 </footer>
@@ -2070,32 +2009,24 @@ target="_blank">
 <div class="floating">
 
 <a
+class="float whatsapp"
 href="https://wa.me/212778231455"
-target="_blank"
-class="float whatsapp">
-
+target="_blank">
 💬
-
 </a>
 
-
 <a
+class="float instagram"
 href="https://www.instagram.com/luxury_product_maroc/"
-target="_blank"
-class="float instagram">
-
+target="_blank">
 ◎
-
 </a>
 
-
 <a
+class="float tiktok"
 href="https://www.tiktok.com/@luxury_mar"
-target="_blank"
-class="float tiktok">
-
+target="_blank">
 ♪
-
 </a>
 
 </div>
@@ -2103,44 +2034,36 @@ class="float tiktok">
 
 <!-- THANK YOU -->
 
-<div
-id="thankYou"
-class="thank-you">
+<div class="thank" id="thank">
 
 <div class="thank-card">
 
 <div class="thank-logo">
-    LUXURY <span>PRODUCTS</span>
+LUXURY <span>PRODUCTS</span>
 </div>
 
 <div class="check">
-    ✓
+✓
 </div>
 
-<div class="thank-small">
-    Votre demande a bien été envoyée
-</div>
+<small>
+Votre demande a été enregistrée
+</small>
 
-<h1>
-    Merci beaucoup ✨
-</h1>
+<h2>
+Merci beaucoup ✨
+</h2>
 
 <p>
-    Nous avons bien reçu votre demande.
-    Nous allons vérifier la disponibilité du produit
-    et vous contacter prochainement.
+Nous avons bien reçu votre demande.
+Notre équipe va vérifier le produit et vous contacter
+prochainement.
 </p>
 
-<div class="thank-info">
-
-<strong>
-    🇲🇦 Livraison partout au Maroc
-</strong>
-
-<span>
-    🎁 Emballage cadeau disponible sur demande.
-</span>
-
+<div style="margin-top:20px;color:#777;font-size:10px;">
+🇲🇦 Livraison partout au Maroc
+<br>
+🎁 Emballage cadeau disponible
 </div>
 
 <div class="thank-buttons">
@@ -2149,17 +2072,13 @@ class="thank-you">
 href="https://wa.me/212778231455"
 target="_blank"
 class="btn btn-dark">
-
-💬 WhatsApp
-
+WhatsApp
 </a>
 
 <button
-onclick="closeThankYou()"
-class="btn btn-light">
-
-Retour à la boutique
-
+class="btn btn-light"
+onclick="closeThank()">
+Retour
 </button>
 
 </div>
@@ -2171,89 +2090,123 @@ Retour à la boutique
 
 <script>
 
-/* ================= MENU ================= */
+/* LOADER */
 
-function toggleMenu(){
+window.addEventListener("load",function(){
 
-    const nav = document.querySelector("nav");
+    setTimeout(function(){
+
+        document
+        .getElementById("loader")
+        .classList.add("hide");
+
+    },2200);
+
+});
+
+
+/* MOBILE MENU */
+
+function menu(){
+
+    const nav =
+    document.getElementById("navigation");
 
     if(nav.style.display === "flex"){
+
         nav.style.display = "none";
+
     }else{
+
         nav.style.display = "flex";
         nav.style.flexDirection = "column";
         nav.style.position = "absolute";
-        nav.style.top = "70px";
+        nav.style.top = "72px";
         nav.style.left = "0";
         nav.style.right = "0";
         nav.style.background = "#fffaf8";
         nav.style.padding = "25px";
+
     }
 
 }
 
 
-/* ================= FILTER ================= */
+/* SEARCH */
 
-function filterProducts(category,button){
+function searchProducts(){
 
-    document.querySelectorAll(".product").forEach(product=>{
+    const search =
+    document
+    .getElementById("search")
+    .value
+    .toLowerCase();
+
+    const products =
+    document
+    .querySelectorAll(".product");
+
+    products.forEach(function(product){
+
+        const text =
+        product.innerText.toLowerCase();
+
+        if(text.includes(search)){
+
+            product.style.display = "block";
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* FILTER */
+
+function filter(category,button){
+
+    const products =
+    document.querySelectorAll(".product");
+
+    products.forEach(function(product){
 
         if(
             category === "all" ||
             product.dataset.category === category
         ){
+
             product.style.display = "block";
+
         }else{
+
             product.style.display = "none";
+
         }
 
     });
 
-    document.querySelectorAll(".filter").forEach(btn=>{
+
+    document
+    .querySelectorAll(".filter")
+    .forEach(function(btn){
+
         btn.classList.remove("active");
+
     });
 
-    if(button){
-        button.classList.add("active");
-    }
+    button.classList.add("active");
 
 }
 
 
-/* ================= SEARCH ================= */
+/* SELECT PRODUCT */
 
-function searchProducts(){
-
-    const value =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-    document.querySelectorAll(".product").forEach(product=>{
-
-        const text =
-            (
-                product.dataset.name +
-                " " +
-                product.innerText
-            ).toLowerCase();
-
-        product.style.display =
-            text.includes(value)
-            ? "block"
-            : "none";
-
-    });
-
-}
-
-
-/* ================= PRODUCT REQUEST ================= */
-
-function chooseProduct(product){
+function selectProduct(product){
 
     document
     .getElementById("productName")
@@ -2268,111 +2221,85 @@ function chooseProduct(product){
 }
 
 
-/* ================= GIFT ================= */
+/* SEND REQUEST */
 
-function toggleGift(){
-
-    const check =
-        document.getElementById("giftCheck");
-
-    const message =
-        document.getElementById("giftMessage");
-
-    if(check.checked){
-
-        message.classList.remove("hide");
-
-    }else{
-
-        message.classList.add("hide");
-
-    }
-
-}
-
-
-/* ================= FORM ================= */
-
-function submitForm(event){
-
-    /*
-    On affiche la confirmation immédiatement
-    pendant que FormSubmit reçoit la demande.
-    */
-
-    const form = event.target;
+function sendRequest(event){
 
     event.preventDefault();
 
-    const data = new FormData(form);
+    const name =
+    document.getElementById("name").value;
 
-    fetch(form.action,{
-        method:"POST",
-        body:data,
-        headers:{
-            "Accept":"application/json"
-        }
-    })
-    .then(()=>{
+    const phone =
+    document.getElementById("phone").value;
 
-        document
-        .getElementById("thankYou")
-        .style.display = "flex";
+    const city =
+    document.getElementById("city").value;
 
-        form.reset();
+    const product =
+    document.getElementById("productName").value;
 
-        document
-        .getElementById("giftCheck")
-        .checked = true;
+    const message =
+    document.getElementById("message").value;
 
-        document
-        .getElementById("giftMessage")
-        .classList.remove("hide");
-
-    })
-    .catch(()=>{
-
-        alert(
-            "Une erreur est survenue. Veuillez nous contacter sur WhatsApp."
-        );
-
-    });
-
-}
+    const gift =
+    document.getElementById("gift").checked
+    ? "Oui"
+    : "Non";
 
 
-/* ================= CLOSE THANK YOU ================= */
+    const text =
+`Bonjour Luxury Products Maroc ✨
 
-function closeThankYou(){
+Nouvelle demande de produit :
+
+Nom : ${name}
+
+WhatsApp : ${phone}
+
+Ville : ${city}
+
+Produit : ${product || "Non précisé"}
+
+Message : ${message || "Aucun"}
+
+Emballage cadeau : ${gift}`;
+
+
+    const whatsapp =
+    "https://wa.me/212778231455?text=" +
+    encodeURIComponent(text);
+
+
+    /*
+    Pour le moment, le bouton ouvre WhatsApp
+    avec toutes les informations de la demande.
+    */
+
+    window.open(whatsapp,"_blank");
+
 
     document
-    .getElementById("thankYou")
-    .style.display = "none";
+    .getElementById("thank")
+    .classList.add("show");
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+
+    document
+    .querySelector(".form")
+    .reset();
 
 }
 
 
-/* ================= LOADER ================= */
+/* CLOSE THANK YOU */
 
-window.addEventListener("load",()=>{
+function closeThank(){
 
-    setTimeout(()=>{
+    document
+    .getElementById("thank")
+    .classList.remove("show");
 
-        const loader =
-            document.querySelector(".loader");
-
-        if(loader){
-            loader.style.display = "none";
-        }
-
-    },3500);
-
-});
+}
 
 </script>
 
