@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Products Maroc | France & Espagne</title>
-<meta name="description" content="Luxury Products Maroc — Produits de France et d'Espagne, livraison partout au Maroc, emballage cadeau disponible.">
+<title>Luxury Products Maroc</title>
+<meta name="description" content="Luxury Products Maroc — Les meilleurs produits de France et d'Espagne au Maroc. Livraison partout au Maroc.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@ html{
 body{
     font-family:'Montserrat',sans-serif;
     background:#fffaf8;
-    color:#211b1d;
+    color:#241d20;
 }
 a{
     text-decoration:none;
@@ -33,22 +33,24 @@ textarea{
 }
 :root{
     --pink:#d6a4b4;
-    --pink-dark:#b9788d;
+    --pink-dark:#b8758b;
     --gold:#b6965d;
     --cream:#fffaf8;
-    --dark:#211b1d;
-    --light-pink:#f8edf0;
+    --dark:#241d20;
+    --soft:#f8edf0;
 }
-/* LOADER */
+/* =========================
+   LOADER
+========================= */
 .loader{
     position:fixed;
     inset:0;
-    background:#fffaf8;
     z-index:99999;
+    background:#fffaf8;
     display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     transition:.7s;
 }
 .loader.hide{
@@ -57,18 +59,17 @@ textarea{
 }
 .loader-logo{
     font-family:'Cormorant Garamond',serif;
-    font-size:46px;
+    font-size:45px;
     letter-spacing:5px;
-    text-align:center;
 }
 .loader-logo span{
     color:var(--gold);
 }
 .loader-sub{
-    color:var(--gold);
     font-size:8px;
     letter-spacing:5px;
-    margin-top:5px;
+    color:var(--gold);
+    margin-top:4px;
 }
 .loader-line{
     width:190px;
@@ -82,9 +83,9 @@ textarea{
     width:100%;
     height:100%;
     background:var(--gold);
-    animation:loading 2s ease;
+    animation:load 2s ease;
 }
-@keyframes loading{
+@keyframes load{
     from{
         transform:translateX(-100%);
     }
@@ -92,25 +93,27 @@ textarea{
         transform:translateX(0);
     }
 }
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
 header{
     position:fixed;
     top:0;
     left:0;
     right:0;
     z-index:1000;
-    background:rgba(255,250,248,.95);
+    background:rgba(255,250,248,.96);
     backdrop-filter:blur(15px);
     border-bottom:1px solid #eee1e1;
 }
 .navbar{
     max-width:1300px;
-    min-height:74px;
+    min-height:75px;
     margin:auto;
     padding:0 25px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 }
 .logo{
     font-family:'Cormorant Garamond',serif;
@@ -122,8 +125,8 @@ header{
 }
 nav{
     display:flex;
-    align-items:center;
     gap:25px;
+    align-items:center;
 }
 nav a{
     font-size:8px;
@@ -136,19 +139,21 @@ nav a:hover{
 }
 .menu-btn{
     display:none;
-    border:0;
     background:none;
+    border:0;
     font-size:25px;
     cursor:pointer;
 }
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero{
     min-height:100vh;
     padding:135px 7% 80px;
     display:grid;
     grid-template-columns:1.1fr .9fr;
-    align-items:center;
     gap:60px;
+    align-items:center;
     background:
     radial-gradient(circle at 85% 20%,#efd9e0 0,transparent 30%),
     radial-gradient(circle at 5% 85%,#f8e8e2 0,transparent 35%);
@@ -187,8 +192,8 @@ nav a:hover{
     cursor:pointer;
     padding:15px 25px;
     display:inline-flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
     font-size:8px;
     letter-spacing:1.5px;
     text-transform:uppercase;
@@ -209,7 +214,9 @@ nav a:hover{
 .btn-light:hover{
     border-color:var(--gold);
 }
-/* HERO VISUAL */
+/* =========================
+   HERO VISUAL
+========================= */
 .hero-visual{
     position:relative;
     height:520px;
@@ -232,45 +239,26 @@ nav a:hover{
     bottom:0;
     transform:rotate(-5deg);
 }
-.fake-product{
+.hero-photo{
     width:100%;
     height:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-}
-.fake-product.rituals{
-    background:linear-gradient(135deg,#d8d4c9,#fff);
-}
-.fake-product.garden{
-    background:linear-gradient(135deg,#ead9cc,#fff);
-}
-.fake-product .emoji{
-    font-size:65px;
-}
-.fake-product .name{
-    font-family:'Cormorant Garamond',serif;
-    font-size:38px;
-}
-.fake-product small{
-    color:var(--gold);
-    letter-spacing:3px;
-    font-size:8px;
+    object-fit:cover;
+    display:block;
 }
 .hero-label{
     position:absolute;
     bottom:15px;
     left:15px;
     right:15px;
-    background:rgba(255,255,255,.93);
+    background:rgba(255,255,255,.94);
     padding:12px;
     text-align:center;
     font-family:'Cormorant Garamond',serif;
     font-size:22px;
 }
-/* BENEFITS */
+/* =========================
+   BENEFITS
+========================= */
 .benefits{
     background:#fff;
     padding:30px 7%;
@@ -299,7 +287,9 @@ nav a:hover{
     font-size:8px;
     margin-top:5px;
 }
-/* SEARCH */
+/* =========================
+   SEARCH
+========================= */
 .search-area{
     background:#fff;
     padding:35px 7%;
@@ -327,7 +317,9 @@ nav a:hover{
     font-size:8px;
     letter-spacing:1px;
 }
-/* SECTIONS */
+/* =========================
+   SECTIONS
+========================= */
 section{
     padding:90px 7%;
 }
@@ -354,7 +346,9 @@ section{
     font-size:10px;
     line-height:1.9;
 }
-/* ORIGINS */
+/* =========================
+   ORIGINS
+========================= */
 .origins{
     max-width:1200px;
     margin:auto;
@@ -370,10 +364,14 @@ section{
     justify-content:flex-end;
 }
 .france{
-    background:linear-gradient(135deg,#f1dfe6,#fff);
+    background:
+    linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.72)),
+    url("images/france.jpg") center/cover;
 }
 .spain{
-    background:linear-gradient(135deg,#f2dfca,#fff);
+    background:
+    linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.72)),
+    url("images/spain.jpg") center/cover;
 }
 .origin h3{
     font-family:'Cormorant Garamond',serif;
@@ -382,12 +380,14 @@ section{
 }
 .origin p{
     max-width:450px;
-    color:#777;
+    color:#555;
     font-size:10px;
     line-height:1.9;
     margin:10px 0 20px;
 }
-/* PRODUCTS */
+/* =========================
+   FILTERS
+========================= */
 .filters{
     display:flex;
     justify-content:center;
@@ -409,6 +409,9 @@ section{
     background:var(--dark);
     color:#fff;
 }
+/* =========================
+   PRODUCTS
+========================= */
 .products{
     max-width:1250px;
     margin:auto;
@@ -424,45 +427,24 @@ section{
 }
 .product:hover{
     transform:translateY(-6px);
-    box-shadow:0 20px 50px rgba(50,30,35,.12);
+    box-shadow:
+    0 20px 50px rgba(50,30,35,.12);
 }
 .product-image{
     height:310px;
     position:relative;
     overflow:hidden;
+    background:#f6eeee;
 }
-.product-image-inner{
+.product-photo{
+    width:100%;
     height:100%;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
 }
-.diamond{
-    background:linear-gradient(135deg,#e5d4dd,#fff);
-}
-.garden{
-    background:linear-gradient(135deg,#e8d8ca,#fff);
-}
-.rituals-bg{
-    background:linear-gradient(135deg,#d9d5ca,#fff);
-}
-.primark-bg{
-    background:linear-gradient(135deg,#e8ccd6,#fff);
-}
-.product-image-inner .emoji{
-    font-size:70px;
-}
-.product-image-inner .product-name{
-    font-family:'Cormorant Garamond',serif;
-    font-size:31px;
-    margin-top:5px;
-}
-.product-image-inner small{
-    color:var(--gold);
-    font-size:8px;
-    letter-spacing:3px;
+.product:hover .product-photo{
+    transform:scale(1.05);
 }
 .badge{
     position:absolute;
@@ -522,7 +504,9 @@ section{
     background:#f5e6eb;
     color:var(--dark);
 }
-/* GIFT */
+/* =========================
+   GIFT
+========================= */
 .gift-section{
     background:#f8edf0;
 }
@@ -534,34 +518,13 @@ section{
     align-items:center;
     gap:70px;
 }
-.gift-visual{
-    display:flex;
-    justify-content:center;
-}
-.gift-box{
-    width:240px;
-    height:180px;
-    background:var(--pink-dark);
-    position:relative;
-    box-shadow:0 30px 60px rgba(80,40,50,.2);
-}
-.gift-box:before{
-    content:"";
-    position:absolute;
-    width:35px;
-    height:100%;
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--gold);
-}
-.gift-box:after{
-    content:"";
-    position:absolute;
+.gift-photo{
     width:100%;
-    height:35px;
-    top:50%;
-    transform:translateY(-50%);
-    background:var(--gold);
+    max-width:430px;
+    height:360px;
+    object-fit:cover;
+    box-shadow:
+    0 25px 60px rgba(60,30,40,.15);
 }
 .gift-text small{
     color:var(--gold);
@@ -580,7 +543,13 @@ section{
     line-height:1.9;
     margin-bottom:20px;
 }
-/* REQUEST */
+.gift-price{
+    color:var(--pink-dark);
+    font-weight:600;
+}
+/* =========================
+   REQUEST FORM
+========================= */
 .request-section{
     background:var(--dark);
     color:#fff;
@@ -664,14 +633,12 @@ section{
 .checkbox input{
     width:auto;
 }
-.gift-price{
-    color:var(--pink-dark);
-    font-weight:600;
-}
 .submit-btn{
     width:100%;
 }
-/* CONTACT */
+/* =========================
+   CONTACT
+========================= */
 .contact-grid{
     max-width:1200px;
     margin:auto;
@@ -708,7 +675,9 @@ section{
     font-weight:600;
     word-break:break-word;
 }
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 footer{
     background:#181415;
     color:#fff;
@@ -756,7 +725,9 @@ footer a{
     color:#777;
     font-size:8px;
 }
-/* FLOATING */
+/* =========================
+   FLOATING BUTTONS
+========================= */
 .floating{
     position:fixed;
     right:16px;
@@ -775,7 +746,8 @@ footer a{
     align-items:center;
     color:#fff;
     font-size:20px;
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
+    box-shadow:
+    0 8px 25px rgba(0,0,0,.18);
 }
 .float-whatsapp{
     background:#25D366;
@@ -786,7 +758,9 @@ footer a{
 .float-tiktok{
     background:#111;
 }
-/* THANK YOU */
+/* =========================
+   THANK YOU
+========================= */
 .thank-you{
     position:fixed;
     inset:0;
@@ -806,7 +780,8 @@ footer a{
     background:#fff;
     padding:50px 30px;
     text-align:center;
-    box-shadow:0 30px 80px rgba(50,30,35,.13);
+    box-shadow:
+    0 30px 80px rgba(50,30,35,.13);
 }
 .thank-logo{
     font-family:'Cormorant Garamond',serif;
@@ -853,7 +828,9 @@ footer a{
     gap:10px;
     flex-wrap:wrap;
 }
-/* MOBILE */
+/* =========================
+   MOBILE
+========================= */
 @media(max-width:900px){
     nav{
         display:none;
@@ -931,7 +908,9 @@ footer a{
 </style>
 </head>
 <body>
-<!-- LOADER -->
+<!-- =========================
+     LOADER
+========================= -->
 <div class="loader" id="loader">
     <div class="loader-logo">
         LUXURY <span>PRODUCTS</span>
@@ -943,7 +922,9 @@ footer a{
         <span></span>
     </div>
 </div>
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 <header>
 <div class="navbar">
 <a href="#accueil" class="logo">
@@ -957,296 +938,197 @@ footer a{
 <a href="#demande">Sur demande</a>
 <a href="#contact">Contact</a>
 </nav>
-<button
-class="menu-btn"
-onclick="toggleMenu()">
+<button class="menu-btn" onclick="toggleMenu()">
 ☰
 </button>
 </div>
 </header>
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 <section class="hero" id="accueil">
 <div class="hero-text">
 <div class="eyebrow">
-    Luxury Products Maroc
+Luxury Products Maroc
 </div>
 <h1>
-    Le luxe
-    <br>
-    <span>accessible.</span>
+Le luxe
+<br>
+<span>accessible.</span>
 </h1>
 <p>
-    Découvrez une sélection de produits tendance
-    provenant de France 🇫🇷 et d'Espagne 🇪🇸 :
-    parfums, beauté, coffrets, mode et bien plus.
-    <br><br>
-    🇲🇦 Livraison partout au Maroc
-    <br>
-    🎁 Emballage cadeau disponible <strong>(+20 DH)</strong>
+Découvrez une sélection de produits
+tendance provenant de France 🇫🇷
+et d'Espagne 🇪🇸.
+<br><br>
+Parfums • Beauté • Coffrets • Mode • Lifestyle
+<br><br>
+🇲🇦 Livraison partout au Maroc
+<br>
+🎁 Emballage cadeau disponible
+<strong>+20 DH</strong>
 </p>
 <div class="buttons">
 <a href="#produits" class="btn btn-dark">
-    Découvrir les produits
+Découvrir les produits
 </a>
-<a
-href="https://wa.me/212778231455"
-target="_blank"
-class="btn btn-light">
-    WhatsApp
+<a href="https://wa.me/212778231455" target="_blank" class="btn btn-light">
+WhatsApp
 </a>
 </div>
 </div>
 <div class="hero-visual">
 <div class="hero-card one">
-<div class="fake-product rituals">
-<div class="emoji">
-🌿
-</div>
-<div class="name">
-RITUALS
-</div>
-<small>
-BODY • HOME • SOUL
-</small>
-</div>
+<img
+src="images/hero-rituals.jpg"
+alt="Luxury Products Maroc"
+class="hero-photo"
+>
 <div class="hero-label">
-    Rituals Selection
+Rituals Selection
 </div>
 </div>
 <div class="hero-card two">
-<div class="fake-product garden">
-<div class="emoji">
-🌸
-</div>
-<div class="name">
-GARDEN
-</div>
-<small>
-BOUQUET
-</small>
-</div>
+<img
+src="images/hero-garden.jpg"
+alt="Garden Bouquet"
+class="hero-photo"
+>
 <div class="hero-label">
-    Gift Collection
+Gift Collection
 </div>
 </div>
 </div>
 </section>
-<!-- BENEFITS -->
+<!-- =========================
+     BENEFITS
+========================= -->
 <div class="benefits">
 <div class="benefit-grid">
 <div class="benefit">
-<div class="benefit-icon">
-🇫🇷
-</div>
-<h4>
-France
-</h4>
-<p>
-Produits sélectionnés
-</p>
+<div class="benefit-icon">🇫🇷</div>
+<h4>France</h4>
+<p>Produits sélectionnés</p>
 </div>
 <div class="benefit">
-<div class="benefit-icon">
-🇪🇸
-</div>
-<h4>
-Espagne
-</h4>
-<p>
-Les meilleures trouvailles
-</p>
+<div class="benefit-icon">🇪🇸</div>
+<h4>Espagne</h4>
+<p>Les meilleures trouvailles</p>
 </div>
 <div class="benefit">
-<div class="benefit-icon">
-🇲🇦
-</div>
-<h4>
-Livraison
-</h4>
-<p>
-Partout au Maroc
-</p>
+<div class="benefit-icon">🇲🇦</div>
+<h4>Livraison</h4>
+<p>Partout au Maroc</p>
 </div>
 <div class="benefit">
-<div class="benefit-icon">
-🎁
-</div>
-<h4>
-Emballage cadeau
-</h4>
-<p>
-+20 DH
-</p>
+<div class="benefit-icon">🎁</div>
+<h4>Emballage cadeau</h4>
+<p>+20 DH</p>
 </div>
 </div>
 </div>
-<!-- SEARCH -->
+<!-- =========================
+     SEARCH
+========================= -->
 <div class="search-area">
 <div class="search-box">
 <input
 id="search"
 type="text"
 placeholder="Rechercher un produit..."
-oninput="searchProducts()">
+oninput="searchProducts()"
+>
 <button onclick="searchProducts()">
 RECHERCHER
 </button>
 </div>
 </div>
-<!-- ORIGINS -->
+<!-- =========================
+     ORIGINS
+========================= -->
 <section id="origines">
 <div class="section-title">
-<small>
-    Nos destinations
-</small>
-<h2>
-    France & Espagne
-</h2>
+<small>Nos destinations</small>
+<h2>France & Espagne</h2>
 <p>
-    Vous avez vu un produit en France ou en Espagne
-    que vous souhaitez commander ?
-    Envoyez-nous simplement sa photo.
+Les meilleurs produits de France 🇫🇷
+et d'Espagne 🇪🇸 sélectionnés
+pour vous.
 </p>
 </div>
 <div class="origins">
 <div class="origin france">
-<h3>
-    France 🇫🇷
-</h3>
+<h3>France 🇫🇷</h3>
 <p>
-    Beauté, parfums, coffrets, mode,
-    skincare et nouveautés.
+Beauté, parfums, coffrets,
+mode, skincare et nouveautés.
 </p>
 <a href="#demande" class="btn btn-dark">
-    Trouver un produit
+Trouver un produit
 </a>
 </div>
 <div class="origin spain">
-<h3>
-    Espagne 🇪🇸
-</h3>
+<h3>Espagne 🇪🇸</h3>
 <p>
-    Les meilleures trouvailles beauté,
-    parfumerie, mode et lifestyle.
+Les meilleures trouvailles beauté,
+parfumerie, mode et lifestyle.
 </p>
 <a href="#demande" class="btn btn-dark">
-    Trouver un produit
+Trouver un produit
 </a>
 </div>
 </div>
 </section>
-<!-- PRODUCTS -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 <section id="produits">
 <div class="section-title">
-<small>
-    Notre sélection
-</small>
-<h2>
-    Produits Luxury
-</h2>
+<small>Notre sélection</small>
+<h2>Produits Luxury</h2>
 <p>
-    Découvrez quelques produits disponibles
-    chez Luxury Products Maroc.
+Découvrez quelques produits disponibles
+chez Luxury Products Maroc.
 </p>
 </div>
 <div class="filters">
-<button
-class="filter active"
+<button class="filter active"
 onclick="filterProducts('all',this)">
 Tous
 </button>
-<button
-class="filter"
+<button class="filter"
 onclick="filterProducts('parfum',this)">
 Parfums
 </button>
-<button
-class="filter"
+<button class="filter"
 onclick="filterProducts('coffret',this)">
 Coffrets
 </button>
-<button
-class="filter"
+<button class="filter"
 onclick="filterProducts('rituals',this)">
 Rituals
 </button>
-<button
-class="filter"
+<button class="filter"
 onclick="filterProducts('mode',this)">
 Mode
 </button>
 </div>
 <div class="products" id="products">
-<!-- DIAMANT -->
-<div
-class="product"
-data-category="parfum"
-data-name="parfum diamant mercadona">
-<div class="product-image">
-<div class="badge">
-🇪🇸 ESPAGNE
-</div>
-<div class="product-image-inner diamond">
-<div class="emoji">
-💎
-</div>
-<div class="product-name">
-DIAMANT
-</div>
-<small>
-MERCADONA
-</small>
-</div>
-</div>
-<div class="product-info">
-<div class="brand">
-Mercadona
-</div>
-<h3>
-Parfum Diamant
-</h3>
-<p>
-Une fragrance élégante sélectionnée
-en Espagne.
-</p>
-<div class="price">
-70 DH
-</div>
-<div class="product-actions">
-<a
-class="order"
-target="_blank"
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Parfum%20Diamant%20Mercadona%20%C3%A0%2070%20DH.">
-Commander
-</a>
-<button
-class="request-product"
-onclick="selectProduct('Parfum Diamant Mercadona')">
-Demander
-</button>
-</div>
-</div>
-</div>
-<!-- GARDEN -->
+<!-- PRODUIT 1 -->
 <div
 class="product"
 data-category="coffret"
-data-name="coffret garden bouquet">
+data-name="garden bouquet coffret"
+>
 <div class="product-image">
 <div class="badge">
 🎁 GIFT
 </div>
-<div class="product-image-inner garden">
-<div class="emoji">
-🌸
-</div>
-<div class="product-name">
-GARDEN
-</div>
-<small>
-BOUQUET
-</small>
-</div>
+<img
+src="images/garden-bouquet.jpg"
+alt="Coffret Garden Bouquet"
+class="product-photo"
+>
 </div>
 <div class="product-info">
 <div class="brand">
@@ -1256,8 +1138,8 @@ Garden Bouquet
 Coffret Garden Bouquet
 </h3>
 <p>
-Coffret cadeau composé de plusieurs
-produits.
+Coffret cadeau élégant,
+idéal pour offrir.
 </p>
 <div class="price">
 199 DH
@@ -1266,48 +1148,92 @@ produits.
 <a
 class="order"
 target="_blank"
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Coffret%20Garden%20Bouquet%20%C3%A0%20199%20DH.">
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Coffret%20Garden%20Bouquet%20%C3%A0%20199%20DH."
+>
 Commander
 </a>
 <button
 class="request-product"
-onclick="selectProduct('Coffret Garden Bouquet')">
+onclick="selectProduct('Coffret Garden Bouquet')"
+>
 Demander
 </button>
 </div>
 </div>
 </div>
-<!-- RITUALS -->
+<!-- PRODUIT 2 -->
+<div
+class="product"
+data-category="parfum"
+data-name="parfum diamant mercadona"
+>
+<div class="product-image">
+<div class="badge">
+🇪🇸 ESPAGNE
+</div>
+<img
+src="images/parfum-diamant.jpg"
+alt="Parfum Diamant Mercadona"
+class="product-photo"
+>
+</div>
+<div class="product-info">
+<div class="brand">
+Mercadona
+</div>
+<h3>
+Parfum Diamant
+</h3>
+<p>
+Une fragrance élégante
+sélectionnée en Espagne.
+</p>
+<div class="price">
+70 DH
+</div>
+<div class="product-actions">
+<a
+class="order"
+target="_blank"
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Parfum%20Diamant%20Mercadona%20%C3%A0%2070%20DH."
+>
+Commander
+</a>
+<button
+class="request-product"
+onclick="selectProduct('Parfum Diamant Mercadona')"
+>
+Demander
+</button>
+</div>
+</div>
+</div>
+<!-- PRODUIT 3 -->
 <div
 class="product"
 data-category="rituals"
-data-name="rituals coffret">
+data-name="rituals"
+>
 <div class="product-image">
 <div class="badge">
 PREMIUM
 </div>
-<div class="product-image-inner rituals-bg">
-<div class="emoji">
-🌿
-</div>
-<div class="product-name">
-RITUALS
-</div>
-<small>
-BODY • HOME • SOUL
-</small>
-</div>
+<img
+src="images/rituals.jpg"
+alt="Rituals"
+class="product-photo"
+>
 </div>
 <div class="product-info">
 <div class="brand">
 Rituals
 </div>
 <h3>
-Rituals Coffret
+Rituals
 </h3>
 <p>
-Une sélection premium parfaite
-pour offrir.
+Une sélection premium
+parfaite pour offrir.
 </p>
 <div class="price">
 380 DH
@@ -1316,37 +1242,34 @@ pour offrir.
 <a
 class="order"
 target="_blank"
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Coffret%20Rituals%20%C3%A0%20380%20DH.">
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20Rituals%20%C3%A0%20380%20DH."
+>
 Commander
 </a>
 <button
 class="request-product"
-onclick="selectProduct('Rituals Coffret')">
+onclick="selectProduct('Rituals')"
+>
 Demander
 </button>
 </div>
 </div>
 </div>
-<!-- PYJAMA -->
+<!-- PRODUIT 4 -->
 <div
 class="product"
 data-category="mode"
-data-name="pyjama primark">
+data-name="pyjama primark"
+>
 <div class="product-image">
 <div class="badge">
 PRIMARK
 </div>
-<div class="product-image-inner primark-bg">
-<div class="emoji">
-🩷
-</div>
-<div class="product-name">
-PYJAMA
-</div>
-<small>
-PRIMARK
-</small>
-</div>
+<img
+src="images/pyjama-primark.jpg"
+alt="Pyjama Primark"
+class="product-photo"
+>
 </div>
 <div class="product-info">
 <div class="brand">
@@ -1356,7 +1279,8 @@ Primark
 Pyjama Primark
 </h3>
 <p>
-Pyjama tendance et confortable.
+Pyjama tendance,
+confortable et élégant.
 </p>
 <div class="price">
 170 DH
@@ -1365,12 +1289,61 @@ Pyjama tendance et confortable.
 <a
 class="order"
 target="_blank"
-href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Pyjama%20Primark%20%C3%A0%20170%20DH.">
+href="https://wa.me/212778231455?text=Bonjour%20Luxury%20Products%20Maroc%2C%20je%20veux%20commander%20le%20Pyjama%20Primark%20%C3%A0%20170%20DH."
+>
 Commander
 </a>
 <button
 class="request-product"
-onclick="selectProduct('Pyjama Primark')">
+onclick="selectProduct('Pyjama Primark')"
+>
+Demander
+</button>
+</div>
+</div>
+</div>
+<!-- PRODUIT SUR DEMANDE -->
+<div
+class="product"
+data-category="all"
+data-name="produit sur demande france espagne"
+>
+<div class="product-image">
+<div class="badge">
+SUR DEMANDE
+</div>
+<img
+src="images/produit-sur-demande.jpg"
+alt="Produit sur demande"
+class="product-photo"
+>
+</div>
+<div class="product-info">
+<div class="brand">
+France • Espagne
+</div>
+<h3>
+Votre produit
+</h3>
+<p>
+Vous avez une photo ?
+Envoyez-la-nous et nous recherchons
+le produit pour vous.
+</p>
+<div class="price">
+Sur demande
+</div>
+<div class="product-actions">
+<a
+class="order"
+href="#demande"
+>
+Envoyer
+</a>
+<button
+class="request-product"
+onclick="selectProduct('Produit sur demande')"
+>
 Demander
 </button>
 </div>
@@ -1378,14 +1351,17 @@ Demander
 </div>
 </div>
 </section>
-<!-- GIFT -->
-<section
-class="gift-section"
-id="cadeau">
+<!-- =========================
+     GIFT
+========================= -->
+<section class="gift-section" id="cadeau">
 <div class="gift-content">
-<div class="gift-visual">
-<div class="gift-box">
-</div>
+<div>
+<img
+src="images/emballage-cadeau.jpg"
+alt="Emballage cadeau Luxury Products Maroc"
+class="gift-photo"
+>
 </div>
 <div class="gift-text">
 <small>
@@ -1396,8 +1372,9 @@ Emballage cadeau 🎁
 </h2>
 <p>
 Vous souhaitez offrir votre commande ?
-Nous proposons un emballage cadeau élégant
-avec un message personnalisé.
+Nous proposons un emballage cadeau
+élégant avec possibilité d'ajouter
+un message personnalisé.
 <br><br>
 <strong class="gift-price">
 🎁 Emballage cadeau : +20 DH
@@ -1405,16 +1382,17 @@ avec un message personnalisé.
 </p>
 <a
 href="#demande"
-class="btn btn-dark">
+class="btn btn-dark"
+>
 Ajouter un emballage cadeau
 </a>
 </div>
 </div>
 </section>
-<!-- REQUEST FORM -->
-<section
-class="request-section"
-id="demande">
+<!-- =========================
+     REQUEST FORM
+========================= -->
+<section class="request-section" id="demande">
 <div class="request-container">
 <div class="request-title">
 <small>
@@ -1424,10 +1402,11 @@ Produit introuvable ?
 Envoyez-nous sa photo.
 </h2>
 <p>
-Vous avez vu un produit en France 🇫🇷 ou en Espagne 🇪🇸
-que vous voulez ?
-Envoyez simplement sa photo et nous vous répondrons
-avec la disponibilité et le prix.
+Vous avez vu un produit en France 🇫🇷
+ou en Espagne 🇪🇸 que vous voulez ?
+Envoyez simplement sa photo.
+Nous vous répondrons avec
+la disponibilité et le prix.
 </p>
 </div>
 <form
@@ -1440,73 +1419,76 @@ onsubmit="showThankYou()"
 <input
 type="hidden"
 name="_subject"
-value="✨ Nouvelle demande — Luxury Products Maroc">
+value="Nouvelle demande - Luxury Products Maroc"
+>
 <input
 type="hidden"
 name="_template"
-value="table">
+value="table"
+>
 <input
 type="hidden"
 name="_captcha"
-value="true">
-<input
-type="hidden"
-name="_autoresponse"
-value="Merci pour votre demande chez Luxury Products Maroc ✨ Nous avons bien reçu votre demande. Notre équipe va vérifier le produit et vous contacter prochainement.">
+value="true"
+>
 <input
 type="hidden"
 name="_next"
-value="https://luxury-product-maroc-9yrm.vercel.app/">
-<input
-type="text"
-name="_honey"
-style="display:none">
+value="https://luxury-product-maroc-9yrm.vercel.app/"
+>
 <div class="form-grid">
 <input
 type="text"
 name="Nom"
 placeholder="Votre nom *"
-required>
+required
+>
 <input
 type="tel"
 name="WhatsApp"
 placeholder="Votre WhatsApp *"
-required>
+required
+>
 <input
 type="email"
 name="Email"
 placeholder="Votre email *"
-required>
+required
+>
 <input
 type="text"
 name="Ville"
 placeholder="Votre ville *"
-required>
+required
+>
 <div class="full">
 <input
 type="text"
 name="Produit"
 id="productName"
-placeholder="Nom du produit">
+placeholder="Nom du produit"
+>
 </div>
 <div class="full">
 <textarea
 name="Message"
-placeholder="Votre message..."></textarea>
+placeholder="Votre message..."
+></textarea>
 </div>
 <div class="full">
 <div class="file">
 <strong>
-📸 Photo du produit
+📸 Ajouter une photo
 </strong>
 <p>
-Vous pouvez envoyer une photo du produit
+Envoyez la photo du produit
 que vous recherchez.
 </p>
 <input
 type="file"
 name="Photo_du_produit"
-accept="image/png,image/jpeg,image/webp">
+accept="image/*"
+>
 </div>
 </div>
 <div class="full">
@@ -1514,7 +1496,8 @@ accept="image/png,image/jpeg,image/webp">
 <input
 type="checkbox"
 name="Emballage_cadeau"
-value="Oui — +20 DH">
+value="Oui - +20 DH"
+>
 🎁 Je souhaite un emballage cadeau
 <strong class="gift-price">
 (+20 DH)
@@ -1524,7 +1507,8 @@ value="Oui — +20 DH">
 <div class="full">
 <button
 type="submit"
-class="btn btn-dark submit-btn">
+class="btn btn-dark submit-btn"
+>
 ✨ ENVOYER MA DEMANDE
 </button>
 </div>
@@ -1532,7 +1516,9 @@ class="btn btn-dark submit-btn">
 </form>
 </div>
 </section>
-<!-- CONTACT -->
+<!-- =========================
+     CONTACT
+========================= -->
 <section id="contact">
 <div class="section-title">
 <small>
@@ -1559,7 +1545,8 @@ Commandes & renseignements
 </p>
 <a
 href="https://wa.me/212778231455"
-target="_blank">
+target="_blank"
+>
 +212 778 231 455
 </a>
 </div>
@@ -1573,8 +1560,7 @@ Email
 <p>
 Demandes personnalisées
 </p>
-<a
-href="mailto:Najwa.elalaoui2005@gmail.com">
+<a href="mailto:Najwa.elalaoui2005@gmail.com">
 Najwa.elalaoui2005@gmail.com
 </a>
 </div>
@@ -1590,7 +1576,8 @@ Nouveautés & arrivages
 </p>
 <a
 href="https://www.instagram.com/luxury_product_maroc/"
-target="_blank">
+target="_blank"
+>
 @luxury_product_maroc
 </a>
 </div>
@@ -1606,13 +1593,16 @@ Nos vidéos
 </p>
 <a
 href="https://www.tiktok.com/@luxury_mar"
-target="_blank">
+target="_blank"
+>
 @Luxury_mar
 </a>
 </div>
 </div>
 </section>
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 <footer>
 <div class="footer-grid">
 <div>
@@ -1623,25 +1613,18 @@ LUXURY <span>PRODUCTS</span>
 Les meilleurs produits de France 🇫🇷
 et d'Espagne 🇪🇸 sélectionnés pour vous.
 Livraison partout au Maroc 🇲🇦.
-Emballage cadeau disponible 🎁 (+20 DH).
+Emballage cadeau disponible 🎁
+(+20 DH).
 </p>
 </div>
 <div>
 <h4>
 NAVIGATION
 </h4>
-<a href="#accueil">
-Accueil
-</a>
-<a href="#produits">
-Produits
-</a>
-<a href="#cadeau">
-Emballage cadeau
-</a>
-<a href="#demande">
-Produit sur demande
-</a>
+<a href="#accueil">Accueil</a>
+<a href="#produits">Produits</a>
+<a href="#cadeau">Emballage cadeau</a>
+<a href="#demande">Produit sur demande</a>
 </div>
 <div>
 <h4>
@@ -1649,21 +1632,23 @@ CONTACT
 </h4>
 <a
 href="https://wa.me/212778231455"
-target="_blank">
+target="_blank"
+>
 WhatsApp
 </a>
-<a
-href="mailto:Najwa.elalaoui2005@gmail.com">
+<a href="mailto:Najwa.elalaoui2005@gmail.com">
 Email
 </a>
 <a
 href="https://www.instagram.com/luxury_product_maroc/"
-target="_blank">
+target="_blank"
+>
 Instagram
 </a>
 <a
 href="https://www.tiktok.com/@luxury_mar"
-target="_blank">
+target="_blank"
+>
 TikTok
 </a>
 </div>
@@ -1672,31 +1657,36 @@ TikTok
 ©️ 2026 Luxury Products Maroc — Tous droits réservés.
 </div>
 </footer>
-<!-- FLOATING BUTTONS -->
+<!-- =========================
+     FLOATING
+========================= -->
 <div class="floating">
 <a
 class="float float-whatsapp"
 href="https://wa.me/212778231455"
-target="_blank">
+target="_blank"
+>
 💬
 </a>
 <a
 class="float float-instagram"
 href="https://www.instagram.com/luxury_product_maroc/"
-target="_blank">
+target="_blank"
+>
 ◎
 </a>
 <a
 class="float float-tiktok"
 href="https://www.tiktok.com/@luxury_mar"
-target="_blank">
+target="_blank"
+>
 ♪
 </a>
 </div>
-<!-- THANK YOU -->
-<div
-class="thank-you"
-id="thankYou">
+<!-- =========================
+     THANK YOU
+========================= -->
+<div class="thank-you" id="thankYou">
 <div class="thank-card">
 <div class="thank-logo">
 LUXURY <span>PRODUCTS</span>
@@ -1712,8 +1702,8 @@ Merci beaucoup ✨
 </h2>
 <p>
 Votre demande a bien été envoyée.
-Nous allons vérifier la disponibilité du produit
-et vous contacter prochainement.
+Nous allons vérifier la disponibilité
+du produit et vous contacter prochainement.
 </p>
 <p style="margin-top:15px;">
 🇲🇦 Livraison partout au Maroc
@@ -1724,12 +1714,14 @@ et vous contacter prochainement.
 <a
 href="https://wa.me/212778231455"
 target="_blank"
-class="btn btn-dark">
+class="btn btn-dark"
+>
 WhatsApp
 </a>
 <button
 class="btn btn-light"
-onclick="closeThankYou()">
+onclick="closeThankYou()"
+>
 Retour au site
 </button>
 </div>
@@ -1746,57 +1738,54 @@ window.addEventListener("load",function(){
 });
 /* MOBILE MENU */
 function toggleMenu(){
-    const nav =
-    document.getElementById("nav");
-    if(nav.style.display === "flex"){
-        nav.style.display = "none";
+    const nav=document.getElementById("nav");
+    if(nav.style.display==="flex"){
+        nav.style.display="none";
     }else{
-        nav.style.display = "flex";
-        nav.style.flexDirection = "column";
-        nav.style.position = "absolute";
-        nav.style.top = "74px";
-        nav.style.left = "0";
-        nav.style.right = "0";
-        nav.style.background = "#fffaf8";
-        nav.style.padding = "25px";
+        nav.style.display="flex";
+        nav.style.flexDirection="column";
+        nav.style.position="absolute";
+        nav.style.top="75px";
+        nav.style.left="0";
+        nav.style.right="0";
+        nav.style.background="#fffaf8";
+        nav.style.padding="25px";
     }
 }
 /* SEARCH */
 function searchProducts(){
-    const value =
-    document
+    const value=document
     .getElementById("search")
     .value
     .toLowerCase()
     .trim();
-    const products =
-    document.querySelectorAll(".product");
+    const products=document
+    .querySelectorAll(".product");
     products.forEach(function(product){
-        const text =
-        (
-            product.innerText +
-            " " +
+        const text=(
+            product.innerText+
+            " "+
             product.dataset.name
         ).toLowerCase();
         if(text.includes(value)){
-            product.style.display = "";
+            product.style.display="";
         }else{
-            product.style.display = "none";
+            product.style.display="none";
         }
     });
 }
 /* FILTER */
 function filterProducts(category,button){
-    const products =
-    document.querySelectorAll(".product");
+    const products=document
+    .querySelectorAll(".product");
     products.forEach(function(product){
         if(
-            category === "all" ||
-            product.dataset.category === category
+            category==="all" ||
+            product.dataset.category===category
         ){
-            product.style.display = "";
+            product.style.display="";
         }else{
-            product.style.display = "none";
+            product.style.display="none";
         }
     });
     document
@@ -1810,7 +1799,7 @@ function filterProducts(category,button){
 function selectProduct(product){
     document
     .getElementById("productName")
-    .value = product;
+    .value=product;
     document
     .getElementById("demande")
     .scrollIntoView({
@@ -1823,7 +1812,7 @@ function showThankYou(){
         document
         .getElementById("thankYou")
         .classList.add("show");
-    },800);
+    },700);
 }
 /* CLOSE THANK YOU */
 function closeThankYou(){
