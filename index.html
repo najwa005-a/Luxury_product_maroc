@@ -1,36 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Luxury Products Maroc | France & Espagne</title>
-
-<meta name="description"
-content="Luxury Products Maroc — Produits sélectionnés de France et d'Espagne, livraison partout au Maroc.">
+<title>Omaima & Driss — Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 /* =====================================================
    GLOBAL
 ===================================================== */
-
-:root{
-    --rose:#d8a9b5;
-    --rose-dark:#b97f91;
-    --rose-light:#f8eef1;
-    --nude:#ead8cf;
-    --cream:#fffaf8;
-    --gold:#b99a62;
-    --black:#1d191a;
-    --grey:#777;
-    --white:#fff;
-}
 
 *{
     margin:0;
@@ -43,179 +29,318 @@ html{
 }
 
 body{
-    font-family:'Montserrat',sans-serif;
-    background:var(--cream);
-    color:var(--black);
+    background:#f5eee5;
+    color:#80613c;
+    font-family:'Cormorant Garamond',serif;
     overflow-x:hidden;
 }
 
-button,
-input,
-textarea,
-select{
-    font-family:inherit;
+a{
+    -webkit-tap-highlight-color:transparent;
 }
 
-a{
-    text-decoration:none;
-}
 
 /* =====================================================
-   LOADER
+   INTRO
 ===================================================== */
 
-.loader{
+.intro{
     position:fixed;
     inset:0;
-    background:#fffaf8;
-    z-index:99999;
+    z-index:9999;
+
     display:flex;
-    justify-content:center;
     align-items:center;
-    flex-direction:column;
-    animation:hideLoader 1s ease 2.4s forwards;
+    justify-content:center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffaf4 0%,
+            #f4e8da 55%,
+            #e8d8c5 100%
+        );
+
+    transition:
+        opacity 1.2s ease,
+        visibility 1.2s ease;
 }
 
-.loader-logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:58px;
-    letter-spacing:8px;
-    animation:logoIn 1.4s ease;
+.intro.hide{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
 }
 
-.loader-sub{
-    margin-top:8px;
-    font-size:10px;
-    letter-spacing:5px;
-    color:var(--gold);
+.envelope{
+    width:min(88vw,420px);
+    height:570px;
+
+    position:relative;
+    cursor:pointer;
+
+    animation:envelopeAppear 1.3s ease both;
 }
 
-.loader-line{
-    width:160px;
-    height:1px;
-    background:#ddd;
-    margin-top:25px;
-    overflow:hidden;
-}
+@keyframes envelopeAppear{
 
-.loader-line::after{
-    content:"";
-    display:block;
-    height:100%;
-    background:var(--gold);
-    animation:loadLine 2s ease;
-}
-
-@keyframes logoIn{
     from{
         opacity:0;
-        transform:translateY(20px);
-        letter-spacing:20px;
+        transform:translateY(30px) scale(.96);
     }
+
     to{
         opacity:1;
-        transform:translateY(0);
-        letter-spacing:8px;
+        transform:translateY(0) scale(1);
     }
 }
 
-@keyframes loadLine{
-    from{width:0}
-    to{width:100%}
+.paper{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf5,
+            #f6eade
+        );
+
+    border:1px solid rgba(165,125,72,.25);
+
+    box-shadow:
+        0 30px 80px rgba(84,55,27,.20),
+        inset 0 0 60px rgba(173,130,77,.07);
 }
 
-@keyframes hideLoader{
-    to{
-        opacity:0;
-        visibility:hidden;
-    }
-}
 
 /* =====================================================
-   HEADER
+   FLORAL DECORATION
 ===================================================== */
 
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:1000;
-    background:rgba(255,250,248,.88);
-    backdrop-filter:blur(18px);
-    border-bottom:1px solid rgba(185,154,98,.15);
+.flower{
+    position:absolute;
+    color:#bd9a68;
+    opacity:.38;
+    font-size:54px;
+    line-height:1;
+
+    filter:drop-shadow(
+        0 2px 2px rgba(125,88,43,.08)
+    );
 }
 
-.nav{
-    max-width:1450px;
-    margin:auto;
-    padding:17px 5%;
+.flower::before{
+    content:"❦";
+}
+
+.f1{
+    top:20px;
+    left:50%;
+    transform:
+        translateX(-50%)
+        rotate(180deg);
+}
+
+.f2{
+    left:20px;
+    top:150px;
+    transform:rotate(-35deg);
+}
+
+.f3{
+    right:20px;
+    top:150px;
+    transform:rotate(35deg);
+}
+
+.f4{
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+
+/* =====================================================
+   ORNAMENT LINES
+===================================================== */
+
+.ornament{
+    position:absolute;
+
+    width:1px;
+    height:130px;
+
+    background:
+        linear-gradient(
+            transparent,
+            #b89563,
+            transparent
+        );
+
+    opacity:.4;
+}
+
+.o1{
+    left:55px;
+    top:175px;
+    transform:rotate(22deg);
+}
+
+.o2{
+    right:55px;
+    top:175px;
+    transform:rotate(-22deg);
+}
+
+
+/* =====================================================
+   INTRO CONTENT
+===================================================== */
+
+.invitation{
+    position:absolute;
+    inset:0;
+
+    padding:
+        145px
+        30px
+        30px;
+
+    text-align:center;
+}
+
+.small-title{
+    font-family:'Playfair Display',serif;
+    letter-spacing:4px;
+    font-size:10px;
+    color:#a17c48;
+    margin-bottom:15px;
+}
+
+.names{
+    font-family:'Great Vibes',cursive;
+    font-size:52px;
+    line-height:1;
+    color:#986f3a;
+}
+
+.and{
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    margin:7px 0;
+    color:#b08a54;
+}
+
+.intro-date{
+    margin-top:24px;
+
+    font-family:'Playfair Display',serif;
+    font-size:12px;
+    letter-spacing:2px;
+    color:#87653b;
+}
+
+.intro-place{
+    margin-top:9px;
+    font-size:14px;
+    letter-spacing:2px;
+    color:#9b784d;
+}
+
+
+/* =====================================================
+   SEAL
+===================================================== */
+
+.seal{
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    width:94px;
+    height:94px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fffaf4 0 53%,
+            #e2ceb5 54% 61%,
+            #fffaf4 62%
+        );
+
+    box-shadow:
+        0 8px 30px rgba(101,70,34,.18);
+
     display:flex;
     align-items:center;
-    justify-content:space-between;
-    gap:25px;
+    justify-content:center;
+
+    z-index:5;
 }
 
-.logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:29px;
-    font-weight:600;
-    letter-spacing:3px;
-    color:var(--black);
-    white-space:nowrap;
+.seal span{
+    font-family:'Great Vibes',cursive;
+    font-size:35px;
+    color:#a3783e;
 }
 
-.logo span{
-    color:var(--gold);
-}
 
-nav{
-    display:flex;
-    gap:25px;
-}
+/* =====================================================
+   OPEN TEXT
+===================================================== */
 
-nav a{
-    color:var(--black);
-    font-size:10px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    position:relative;
-}
-
-nav a::after{
-    content:"";
+.open-text{
     position:absolute;
+    bottom:20px;
     left:0;
-    bottom:-7px;
-    width:0;
-    height:1px;
-    background:var(--gold);
-    transition:.3s;
+    right:0;
+
+    text-align:center;
+
+    font-size:11px;
+    letter-spacing:3px;
+    color:#a3865c;
+
+    animation:pulse 2s infinite;
 }
 
-nav a:hover::after{
-    width:100%;
+@keyframes pulse{
+
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.4;
+    }
 }
 
-.nav-icons{
-    display:flex;
-    gap:8px;
+
+/* =====================================================
+   MAIN WEBSITE
+===================================================== */
+
+.website{
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity 1.3s ease;
 }
 
-.nav-icon{
-    width:38px;
-    height:38px;
-    border-radius:50%;
-    border:1px solid #ded6d3;
-    background:white;
-    cursor:pointer;
-    transition:.3s;
+.website.show{
+    opacity:1;
+    visibility:visible;
 }
 
-.nav-icon:hover{
-    transform:translateY(-3px);
-    border-color:var(--gold);
-}
 
 /* =====================================================
    HERO
@@ -223,2092 +348,1479 @@ nav a:hover::after{
 
 .hero{
     min-height:100vh;
-    padding:145px 7% 90px;
-    display:grid;
-    grid-template-columns:1.05fr .95fr;
+    position:relative;
+
+    display:flex;
     align-items:center;
-    gap:60px;
+    justify-content:center;
+
+    text-align:center;
+    overflow:hidden;
 
     background:
-    radial-gradient(circle at 85% 30%,rgba(216,169,181,.24),transparent 30%),
-    radial-gradient(circle at 20% 80%,rgba(234,216,207,.35),transparent 35%);
+
+        linear-gradient(
+            rgba(247,238,227,.72),
+            rgba(247,238,227,.91)
+        ),
+
+        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90")
+
+        center/cover;
 }
 
-.eyebrow{
-    font-size:10px;
-    color:var(--gold);
+.hero::before{
+    content:"";
+
+    position:absolute;
+    inset:18px;
+
+    border:
+        1px solid
+        rgba(151,111,60,.3);
+
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:30px;
+}
+
+.hero-small{
+    letter-spacing:5px;
+    font-size:11px;
+    text-transform:uppercase;
+    color:#88683f;
+}
+
+.hero-names{
+    font-family:'Great Vibes',cursive;
+
+    font-size:
+        clamp(
+            70px,
+            15vw,
+            125px
+        );
+
+    line-height:.9;
+    color:#956b35;
+
+    margin:25px 0;
+}
+
+.hero-date{
+    font-family:'Playfair Display',serif;
+
+    font-size:17px;
     letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:22px;
+    color:#7d5c37;
 }
 
-.hero h1{
-    font-family:'Cormorant Garamond',serif;
-    font-size:clamp(55px,7vw,105px);
-    font-weight:500;
-    line-height:.85;
+.hero-place{
+    margin-top:13px;
+    font-size:17px;
+    letter-spacing:3px;
 }
 
-.hero h1 span{
-    color:var(--rose-dark);
-    font-style:italic;
-}
 
-.hero-text{
-    max-width:620px;
-}
+/* =====================================================
+   DIVIDER
+===================================================== */
 
-.hero-text p{
-    margin:30px 0;
-    color:#6f6a69;
-    line-height:1.9;
-    font-size:13px;
-}
+.divider{
+    width:90px;
+    height:1px;
 
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
+    background:#b89663;
 
-.btn{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    gap:8px;
-    padding:16px 25px;
-    border:none;
-    cursor:pointer;
-    font-size:10px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    transition:.35s;
-}
+    margin:28px auto;
 
-.btn-dark{
-    background:var(--black);
-    color:white;
-}
-
-.btn-dark:hover{
-    background:var(--rose-dark);
-    transform:translateY(-3px);
-}
-
-.btn-white{
-    background:white;
-    color:var(--black);
-    border:1px solid #ddd;
-}
-
-.btn-white:hover{
-    border-color:var(--gold);
-    transform:translateY(-3px);
-}
-
-/* HERO VISUAL */
-
-.hero-visual{
-    min-height:580px;
     position:relative;
 }
 
-.hero-card{
+.divider::after{
+    content:"✦";
+
     position:absolute;
-    width:330px;
-    height:430px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:#f7eee5;
+
+    padding:0 10px;
+
+    font-size:13px;
+    color:#a37c48;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.nav{
+    position:fixed;
+
+    z-index:100;
+
+    bottom:20px;
+    left:50%;
+
+    transform:
+        translateX(-50%);
+
+    width:min(92%,650px);
+
     display:flex;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
-    background:linear-gradient(145deg,#fff,#f5e5e5);
-    box-shadow:0 35px 80px rgba(80,40,50,.15);
+
+    padding:11px 12px;
+
+    background:
+        rgba(255,250,244,.88);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:
+        1px solid
+        rgba(153,113,61,.2);
+
+    border-radius:50px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(84,57,28,.13);
 }
 
-.hero-card:first-child{
-    top:3%;
-    right:5%;
-    transform:rotate(7deg);
-}
+.nav a{
+    color:#80603b;
+    text-decoration:none;
 
-.hero-card:last-child{
-    bottom:3%;
-    left:5%;
-    transform:rotate(-7deg);
-}
-
-.hero-card-content{
-    text-align:center;
-}
-
-.hero-card-content .emoji{
-    font-size:90px;
-    filter:drop-shadow(0 15px 15px rgba(0,0,0,.12));
-}
-
-.hero-card-content h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:33px;
-    margin-top:15px;
-}
-
-.hero-card-content p{
-    color:var(--gold);
-    font-size:9px;
-    letter-spacing:3px;
-    margin-top:8px;
-}
-
-/* =====================================================
-   BENEFITS
-===================================================== */
-
-.benefits{
-    background:white;
-    padding:25px 6%;
-}
-
-.benefit-grid{
-    max-width:1300px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.benefit{
-    text-align:center;
-    padding:17px 10px;
-}
-
-.benefit-icon{
-    font-size:23px;
-    margin-bottom:7px;
-}
-
-.benefit h4{
-    font-size:10px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
-
-.benefit p{
-    color:#888;
-    font-size:9px;
-    margin-top:5px;
-}
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-.search-section{
-    padding:35px 6%;
-    background:white;
-}
-
-.search-box{
-    max-width:1100px;
-    margin:auto;
-    display:flex;
-    padding:5px;
-    border:1px solid #dfd6d2;
-    box-shadow:0 15px 35px rgba(0,0,0,.04);
-}
-
-.search-box input{
-    flex:1;
-    border:none;
-    outline:none;
-    padding:17px;
     font-size:12px;
+    letter-spacing:1px;
+
+    padding:8px 12px;
+
+    transition:.3s ease;
 }
 
-.search-box button{
-    border:none;
-    background:var(--black);
-    color:white;
-    padding:0 27px;
-    cursor:pointer;
+.nav a:hover{
+    color:#ad8148;
 }
+
 
 /* =====================================================
    SECTIONS
 ===================================================== */
 
 section{
-    padding:100px 7%;
+    padding:
+        100px
+        20px;
+
+    position:relative;
 }
 
-.section-head{
+.section-title{
     text-align:center;
-    margin-bottom:50px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:58px;
+
+    color:#956d39;
 }
 
-.section-head small{
-    color:var(--gold);
-    font-size:9px;
-    letter-spacing:4px;
+.section-subtitle{
+    text-align:center;
+
+    margin-top:8px;
+
+    font-size:12px;
+
+    letter-spacing:3px;
+
     text-transform:uppercase;
 }
 
-.section-head h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:57px;
-    font-weight:500;
-    margin:12px 0;
-}
 
-.section-head p{
-    color:#777;
-    max-width:600px;
+/* =====================================================
+   STORY
+===================================================== */
+
+.story{
+    max-width:850px;
+
     margin:auto;
-    font-size:12px;
+
+    text-align:center;
+
+    font-size:20px;
+
     line-height:1.8;
+
+    color:#725a3c;
 }
 
-/* =====================================================
-   CATEGORIES
-===================================================== */
+.arabic{
+    direction:rtl;
 
-.categories{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
+    font-family:'Amiri',serif;
 
-.category{
-    min-height:220px;
-    padding:28px;
-    display:flex;
-    justify-content:flex-end;
-    flex-direction:column;
-    background:linear-gradient(145deg,#fff,#f7eaea);
-    position:relative;
-    overflow:hidden;
-    cursor:pointer;
-    transition:.4s;
-}
-
-.category:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 50px rgba(80,40,50,.1);
-}
-
-.category-icon{
-    position:absolute;
-    top:22px;
-    right:24px;
-    font-size:48px;
-    opacity:.35;
-}
-
-.category h3{
-    font-family:'Cormorant Garamond',serif;
     font-size:31px;
-}
 
-.category p{
-    color:#888;
-    font-size:10px;
-    margin-top:6px;
-}
-
-/* =====================================================
-   ORIGINS
-===================================================== */
-
-.origins{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:22px;
-}
-
-.origin{
-    min-height:330px;
-    padding:50px;
-    display:flex;
-    justify-content:flex-end;
-    flex-direction:column;
-    position:relative;
-    overflow:hidden;
-}
-
-.origin.france{
-    background:linear-gradient(135deg,#f8e7ec,#fff);
-}
-
-.origin.spain{
-    background:linear-gradient(135deg,#f4e3d1,#fff);
-}
-
-.origin-flag{
-    position:absolute;
-    top:35px;
-    right:40px;
-    font-size:60px;
-}
-
-.origin h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:50px;
-}
-
-.origin p{
-    max-width:500px;
-    color:#666;
     line-height:1.8;
-    font-size:12px;
-    margin:12px 0 22px;
+
+    margin:
+        30px
+        0
+        22px;
+
+    color:#8d6838;
 }
+
 
 /* =====================================================
-   PRODUCTS
+   DETAILS
 ===================================================== */
 
-.filters{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    flex-wrap:wrap;
-    margin-bottom:35px;
+.details{
+    background:
+        linear-gradient(
+            135deg,
+            #efe0cf,
+            #f4e8dc
+        );
 }
 
-.filter{
-    background:white;
-    border:1px solid #ddd;
-    padding:11px 18px;
-    font-size:9px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    cursor:pointer;
-}
+.cards{
+    max-width:1000px;
 
-.filter.active,
-.filter:hover{
-    background:var(--black);
-    color:white;
-}
+    margin:
+        55px
+        auto
+        0;
 
-.products{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:24px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
 }
 
-.product{
-    background:white;
-    border:1px solid #eee6e2;
-    overflow:hidden;
-    transition:.4s;
+.card{
+    background:
+        rgba(255,250,244,.72);
+
+    border:
+        1px solid
+        rgba(157,116,61,.2);
+
+    padding:
+        40px
+        20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(103,74,39,.08);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease;
 }
 
-.product:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 50px rgba(60,30,40,.09);
+.card:hover{
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(103,74,39,.13);
 }
 
-.product-img{
-    height:280px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(145deg,#faeeee,#eee0dc);
-    position:relative;
+.card-icon{
+    font-size:30px;
+    color:#a27b44;
+    margin-bottom:15px;
 }
 
-.product-img span{
-    font-size:90px;
-    filter:drop-shadow(0 20px 15px rgba(0,0,0,.1));
-}
+.card h3{
+    font-family:'Playfair Display',serif;
 
-.product-badge{
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:var(--black);
-    color:white;
-    padding:7px 10px;
-    font-size:8px;
-    letter-spacing:1px;
-}
+    font-weight:500;
 
-.product-info{
-    padding:20px;
-}
-
-.brand{
-    color:var(--gold);
-    font-size:8px;
     letter-spacing:2px;
-    text-transform:uppercase;
+
+    font-size:16px;
+
+    color:#7e5c36;
 }
 
-.product h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:24px;
-    margin:7px 0;
-}
+.card p{
+    margin-top:12px;
 
-.product-desc{
-    color:#888;
-    font-size:10px;
+    font-size:17px;
+
     line-height:1.6;
+
+    color:#735a3d;
+}
+
+
+/* =====================================================
+   MAP BUTTON
+===================================================== */
+
+.map-button{
+    display:inline-block;
+
+    margin-top:20px;
+
+    padding:
+        12px
+        22px;
+
+    border:
+        1px solid
+        #a17b45;
+
+    color:#8b6739;
+
+    text-decoration:none;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+
+    transition:.35s ease;
+}
+
+.map-button:hover{
+    background:#9b7542;
+    color:white;
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
+
+.countdown{
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    margin-top:55px;
+
+    flex-wrap:wrap;
+}
+
+.time-box{
+    min-width:100px;
+    text-align:center;
+}
+
+.time-number{
+    font-family:'Playfair Display',serif;
+
+    font-size:44px;
+
+    color:#956d38;
+}
+
+.time-label{
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-top:5px;
+}
+
+
+/* =====================================================
+   RSVP
+===================================================== */
+
+.rsvp{
+    background:#f8f0e7;
+
+    text-align:center;
+}
+
+.rsvp-text{
+    max-width:700px;
+
+    margin:
+        25px
+        auto
+        35px;
+
+    font-size:19px;
+
+    line-height:1.7;
+
+    color:#725a3c;
+}
+
+
+/* RSVP FORM */
+
+.rsvp-form{
+
+    width:min(100%,700px);
+
+    margin:0 auto;
+
+    text-align:left;
+}
+
+.form-group{
+    margin-bottom:25px;
+}
+
+.form-label{
+    display:block;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    color:#80603d;
+
     margin-bottom:10px;
 }
 
-.price{
-    font-weight:600;
-    font-size:13px;
-    margin-bottom:15px;
-}
+.form-input,
+.form-select,
+.form-message{
 
-.old{
-    color:#aaa;
-    text-decoration:line-through;
-    font-size:10px;
-    margin-right:7px;
-}
-
-.product-btn{
     width:100%;
-    border:none;
-    background:var(--black);
-    color:white;
-    padding:12px;
-    cursor:pointer;
-    font-size:9px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-}
 
-/* =====================================================
-   GIFT
-===================================================== */
+    padding:17px 20px;
 
-.gift-section{
-    background:var(--rose-light);
-}
+    background:
+        rgba(255,250,244,.65);
 
-.gift-container{
-    max-width:1100px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
+    border:
+        1px solid
+        rgba(157,116,61,.35);
 
-.gift-visual{
-    min-height:390px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
+    color:#705638;
 
-.gift-box{
-    width:245px;
-    height:205px;
-    background:var(--rose-dark);
-    position:relative;
-    box-shadow:0 35px 55px rgba(100,50,60,.2);
-}
-
-.gift-box::before{
-    content:"";
-    position:absolute;
-    left:50%;
-    top:0;
-    width:40px;
-    height:100%;
-    background:var(--gold);
-    transform:translateX(-50%);
-}
-
-.gift-box::after{
-    content:"";
-    position:absolute;
-    top:50%;
-    left:0;
-    width:100%;
-    height:40px;
-    background:var(--gold);
-    transform:translateY(-50%);
-}
-
-.gift-content small{
-    color:var(--gold);
-    letter-spacing:4px;
-    text-transform:uppercase;
-}
-
-.gift-content h2{
     font-family:'Cormorant Garamond',serif;
-    font-size:58px;
-    font-weight:500;
-    margin:12px 0;
-}
 
-.gift-content p{
-    color:#666;
-    line-height:1.9;
-    font-size:12px;
-    margin-bottom:22px;
-}
+    font-size:17px;
 
-.gift-options{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.gift-option{
-    padding:13px 17px;
-    border:1px solid #ddd;
-    background:white;
-    cursor:pointer;
-    font-size:9px;
-}
-
-.gift-option.selected{
-    border-color:var(--gold);
-    box-shadow:inset 0 -2px var(--gold);
-}
-
-/* =====================================================
-   REQUEST FORM
-===================================================== */
-
-.request-section{
-    background:var(--black);
-    color:white;
-}
-
-.request-container{
-    max-width:900px;
-    margin:auto;
-}
-
-.request-title{
-    text-align:center;
-    margin-bottom:35px;
-}
-
-.request-title small{
-    color:var(--gold);
-    letter-spacing:4px;
-    font-size:9px;
-}
-
-.request-title h2{
-    font-family:'Cormorant Garamond',serif;
-    font-size:60px;
-    font-weight:500;
-    margin:10px 0;
-}
-
-.request-title p{
-    color:#aaa;
-    max-width:620px;
-    margin:auto;
-    font-size:11px;
-    line-height:1.8;
-}
-
-.request-form{
-    background:white;
-    color:var(--black);
-    padding:30px;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.request-form input,
-.request-form textarea,
-.request-form select{
-    width:100%;
-    padding:15px;
-    border:1px solid #ddd;
     outline:none;
-    font-size:11px;
-    margin-bottom:15px;
+
+    transition:.3s ease;
 }
 
-.request-form textarea{
-    min-height:130px;
+.form-input:focus,
+.form-select:focus,
+.form-message:focus{
+
+    border-color:#a17b45;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(161,123,69,.08);
+}
+
+.form-message{
+    min-height:120px;
     resize:vertical;
 }
 
-.full{
-    grid-column:1/-1;
-}
 
-.gift-check{
+/* RADIO */
+
+.radio-group{
     display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.radio-option{
+
+    position:relative;
+
+    display:flex;
+
     align-items:center;
-    gap:10px;
-    font-size:11px;
-    margin-bottom:15px;
+
+    gap:14px;
+
+    padding:17px 20px;
+
+    background:
+        rgba(255,250,244,.65);
+
+    border:
+        1px solid
+        rgba(157,116,61,.25);
+
+    cursor:pointer;
+
+    transition:.3s ease;
 }
 
-.gift-check input{
-    width:auto;
-    margin:0;
+.radio-option:hover{
+    border-color:#b08a54;
 }
 
-.gift-message{
+.radio-option input{
+    position:absolute;
+    opacity:0;
+}
+
+.radio-circle{
+
+    width:23px;
+    height:23px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        #a98a64;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+
+.radio-circle::after{
+
+    content:"";
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:#a17b45;
+
+    transform:scale(0);
+
+    transition:.2s ease;
+}
+
+.radio-option input:checked + .radio-circle::after{
+    transform:scale(1);
+}
+
+.radio-text{
+    font-size:18px;
+    color:#725a3c;
+}
+
+
+/* SUBMIT */
+
+.rsvp-submit{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:18px 25px;
+
+    background:transparent;
+
+    border:
+        1px solid
+        #a17b45;
+
+    color:#8b6739;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+}
+
+.rsvp-submit:hover{
+    background:#9b7542;
+    color:white;
+}
+
+
+/* SUCCESS MESSAGE */
+
+.success-message{
+
     display:none;
+
+    max-width:650px;
+
+    margin:30px auto 0;
+
+    padding:35px 25px;
+
+    border:
+        1px solid
+        rgba(157,116,61,.3);
+
+    background:
+        rgba(255,250,244,.7);
+
+    text-align:center;
+
+    animation:successAppear .7s ease;
 }
 
-.gift-message.show{
+.success-message.show{
     display:block;
 }
 
-/* =====================================================
-   CONTACT
-===================================================== */
+.success-title{
 
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    color:#956d39;
+
+    margin-bottom:12px;
 }
 
-.contact-card{
-    background:white;
-    padding:30px 18px;
-    text-align:center;
-    border:1px solid #eee;
-    transition:.3s;
+.success-message p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#725a3c;
 }
 
-.contact-card:hover{
-    transform:translateY(-6px);
-    border-color:var(--gold);
+@keyframes successAppear{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-.contact-icon{
-    font-size:28px;
-    margin-bottom:13px;
-}
-
-.contact-card h3{
-    font-family:'Cormorant Garamond',serif;
-    font-size:25px;
-}
-
-.contact-card p{
-    color:#888;
-    font-size:9px;
-    margin:8px 0 15px;
-}
-
-.contact-card a{
-    color:var(--black);
-    font-size:9px;
-    font-weight:600;
-}
 
 /* =====================================================
    FOOTER
 ===================================================== */
 
 footer{
-    background:#171414;
-    color:white;
-    padding:60px 7% 25px;
+    padding:
+        80px
+        20px
+        130px;
+
+    text-align:center;
+
+    background:#eadbc9;
 }
 
-.footer-grid{
-    max-width:1300px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:50px;
-    padding-bottom:40px;
-}
+.footer-names{
+    font-family:'Great Vibes',cursive;
 
-.footer-logo{
-    font-family:'Cormorant Garamond',serif;
-    font-size:37px;
-    letter-spacing:3px;
-}
+    font-size:55px;
 
-.footer-logo span{
-    color:var(--gold);
+    color:#956d38;
 }
 
 footer p{
-    color:#999;
-    max-width:450px;
-    font-size:10px;
-    line-height:1.9;
     margin-top:15px;
-}
 
-footer h4{
-    font-size:9px;
     letter-spacing:2px;
-    margin-bottom:20px;
+
+    font-size:12px;
+
+    color:#80603d;
 }
 
-footer a{
-    display:block;
-    color:#aaa;
-    font-size:10px;
-    margin:10px 0;
-}
-
-.footer-bottom{
-    max-width:1300px;
-    margin:auto;
-    border-top:1px solid #333;
-    padding-top:20px;
-    text-align:center;
-    color:#777;
-    font-size:8px;
-}
 
 /* =====================================================
-   FLOATING SOCIAL
+   MOBILE
 ===================================================== */
 
-.floating{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    z-index:2000;
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
+@media(max-width:700px){
 
-.float-btn{
-    width:50px;
-    height:50px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    font-size:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
-    transition:.3s;
-}
-
-.float-btn:hover{
-    transform:scale(1.1);
-}
-
-.whatsapp{
-    background:#25D366;
-}
-
-.instagram{
-    background:#d62976;
-}
-
-.tiktok{
-    background:#111;
-}
-
-/* =====================================================
-   TOAST
-===================================================== */
-
-.toast{
-    position:fixed;
-    left:50%;
-    bottom:30px;
-    transform:translate(-50%,120px);
-    background:var(--black);
-    color:white;
-    padding:15px 25px;
-    z-index:9999;
-    font-size:10px;
-    letter-spacing:.5px;
-    transition:.4s;
-}
-
-.toast.show{
-    transform:translate(-50%,0);
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:1050px){
-
-    nav{
-        gap:13px;
+    .envelope{
+        width:88vw;
+        height:560px;
     }
 
-    .products,
-    .categories{
-        grid-template-columns:repeat(2,1fr);
+    .invitation{
+        padding-top:145px;
     }
 
-    .benefit-grid{
-        grid-template-columns:repeat(2,1fr);
+    .names{
+        font-size:47px;
     }
 
-    .contact-grid{
-        grid-template-columns:repeat(2,1fr);
+    .cards{
+        grid-template-columns:1fr;
+        max-width:450px;
     }
-}
 
-@media(max-width:800px){
+    .hero-names{
+        font-size:75px;
+    }
 
-    header{
-        padding:10px 4%;
+    .hero-date{
+        font-size:14px;
+        letter-spacing:2px;
+    }
+
+    .hero-place{
+        font-size:14px;
+        letter-spacing:2px;
     }
 
     .nav{
-        padding:10px 0;
+        width:94%;
+        padding:8px 5px;
     }
 
-    .logo{
-        font-size:22px;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-        grid-template-columns:1fr;
-        padding:125px 6% 60px;
-    }
-
-    .hero h1{
-        font-size:65px;
-    }
-
-    .hero-visual{
-        min-height:500px;
-    }
-
-    .hero-card{
-        width:250px;
-        height:330px;
-    }
-
-    .hero-card-content .emoji{
-        font-size:65px;
-    }
-
-    .hero-card:first-child{
-        right:0;
-    }
-
-    .hero-card:last-child{
-        left:0;
+    .nav a{
+        font-size:9px;
+        padding:7px 5px;
     }
 
     section{
-        padding:75px 6%;
+        padding:
+            80px
+            18px;
     }
 
-    .section-head h2{
-        font-size:45px;
+    .section-title{
+        font-size:52px;
     }
 
-    .origins,
-    .gift-container{
-        grid-template-columns:1fr;
+    .arabic{
+        font-size:27px;
     }
 
-    .origin{
-        min-height:280px;
+    .countdown{
+        gap:20px;
     }
 
-    .form-grid{
-        grid-template-columns:1fr;
+    .time-box{
+        min-width:75px;
     }
 
-    .full{
-        grid-column:auto;
+    .time-number{
+        font-size:36px;
     }
 
-    .footer-grid{
-        grid-template-columns:1fr;
+    .form-label{
+        font-size:17px;
     }
+
+    .radio-text{
+        font-size:17px;
+    }
+
 }
 
-@media(max-width:520px){
 
-    .benefit-grid{
-        grid-template-columns:1fr 1fr;
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media(max-width:400px){
+
+    .hero-names{
+        font-size:65px;
     }
 
-    .products,
-    .categories,
-    .contact-grid{
-        grid-template-columns:1fr;
+    .names{
+        font-size:43px;
     }
 
-    .product-img{
-        height:300px;
+    .section-title{
+        font-size:47px;
     }
 
-    .hero h1{
-        font-size:57px;
+    .nav a{
+        font-size:8px;
     }
 
-    .hero-visual{
-        min-height:430px;
-    }
-
-    .hero-card{
-        width:210px;
-        height:290px;
-    }
-
-    .search-box{
-        flex-direction:column;
-    }
-
-    .search-box button{
-        padding:15px;
-    }
-
-    .request-form{
-        padding:20px;
-    }
-
-    .request-title h2{
-        font-size:45px;
-    }
-
-    .floating{
-        right:12px;
-        bottom:12px;
-    }
-
-    .float-btn{
-        width:45px;
-        height:45px;
-    }
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
 <!-- =====================================================
-     LOADER
+     INTRO
 ===================================================== -->
 
-<div class="loader">
+<div class="intro" id="intro">
 
-    <div class="loader-logo">
-        LUXURY
+    <div
+        class="envelope"
+        onclick="openInvitation()"
+    >
+
+        <div class="paper">
+
+            <div class="flower f1"></div>
+            <div class="flower f2"></div>
+            <div class="flower f3"></div>
+            <div class="flower f4"></div>
+
+            <div class="ornament o1"></div>
+            <div class="ornament o2"></div>
+
+            <div class="invitation">
+
+                <div class="small-title">
+                    NOTRE MARIAGE
+                </div>
+
+                <div class="names">
+                                 
+                </div>
+
+                <div class="and">
+                    &
+                </div>
+
+                <div class="names">
+                             
+                </div>
+
+                <div class="intro-date">
+                    SAMEDI · 10 OCTOBRE 2026
+                </div>
+
+                <div class="intro-place">
+                    DAR MEKHTARA · 18:00
+                </div>
+
+            </div>
+
+            <div class="seal">
+                <span>O & D</span>
+            </div>
+
+            <div class="open-text">
+                TOUCHEZ POUR OUVRIR
+            </div>
+
+        </div>
+
     </div>
-
-    <div class="loader-sub">
-        PRODUCTS MAROC
-    </div>
-
-    <div class="loader-line"></div>
 
 </div>
 
 
+
 <!-- =====================================================
-     HEADER
+     MAIN WEBSITE
 ===================================================== -->
 
-<header>
+<div
+    class="website"
+    id="website"
+>
 
-<div class="nav">
 
-    <a href="#accueil" class="logo">
-        LUXURY <span>PRODUCTS</span>
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="nav">
+
+    <a href="#accueil">
+        Accueil
     </a>
 
-    <nav>
+    <a href="#histoire">
+        Notre histoire
+    </a>
 
-        <a href="#accueil">Accueil</a>
-        <a href="#categories">Catégories</a>
-        <a href="#produits">Produits</a>
-        <a href="#france-espagne">France & Espagne</a>
-        <a href="#cadeau">Cadeau</a>
-        <a href="#contact">Contact</a>
+    <a href="#details">
+        Détails
+    </a>
 
-    </nav>
+    <a href="#rsvp">
+        RSVP
+    </a>
 
-    <div class="nav-icons">
+</nav>
 
-        <button class="nav-icon"
-        onclick="document.getElementById('search').scrollIntoView()">
-            🔎
-        </button>
-
-    </div>
-
-</div>
-
-</header>
 
 
 <!-- =====================================================
      HERO
 ===================================================== -->
 
-<section class="hero" id="accueil">
+<section
+    class="hero"
+    id="accueil"
+>
 
-<div class="hero-text">
+    <div class="hero-content">
 
-    <div class="eyebrow">
-        Sélection exclusive • France • Espagne
-    </div>
+        <div class="hero-small">
+            AVEC L'AMOUR DE NOS FAMILLES
+        </div>
 
-    <h1>
-        Le luxe<br>
-        <span>accessible.</span>
-    </h1>
+        <div class="hero-names">
 
-    <p>
-        Découvrez une sélection de produits tendance,
-        beauté, parfums, soins, mode et cadeaux
-        soigneusement recherchés en France et en Espagne
-        pour vous offrir les meilleurs produits au Maroc
-        à des prix exceptionnels.
-    </p>
+            Omaima
 
-    <div class="hero-buttons">
+            <br>
 
-        <a href="#produits" class="btn btn-dark">
-            Découvrir la collection
-        </a>
+            <span
+                style="
+                font-family:'Playfair Display';
+                font-size:.35em;
+                "
+            >
+                &
+            </span>
 
-        <a href="https://wa.me/212778231455"
-        target="_blank"
-        class="btn btn-white">
-            Commander sur WhatsApp
-        </a>
+            <br>
 
-    </div>
+            Driss
 
-</div>
+        </div>
 
+        <div class="divider"></div>
 
-<div class="hero-visual">
+        <div class="hero-date">
+            SAMEDI · 10 OCTOBRE 2026
+        </div>
 
-    <div class="hero-card">
-
-        <div class="hero-card-content">
-
-            <div class="emoji">👜</div>
-
-            <h3>Luxury Selection</h3>
-
-            <p>FRANCE • ESPAGNE</p>
-
+        <div class="hero-place">
+            DAR MEKHTARA · 18:00
         </div>
 
     </div>
 
-
-    <div class="hero-card">
-
-        <div class="hero-card-content">
-
-            <div class="emoji">💄</div>
-
-            <h3>Beauty & Care</h3>
-
-            <p>EXCLUSIVE PRODUCTS</p>
-
-        </div>
-
-    </div>
-
-</div>
-
 </section>
 
 
-<!-- =====================================================
-     BENEFITS
-===================================================== -->
-
-<div class="benefits">
-
-<div class="benefit-grid">
-
-    <div class="benefit">
-
-        <div class="benefit-icon">🇫🇷</div>
-
-        <h4>France</h4>
-
-        <p>Produits sélectionnés</p>
-
-    </div>
-
-
-    <div class="benefit">
-
-        <div class="benefit-icon">🇪🇸</div>
-
-        <h4>Espagne</h4>
-
-        <p>Les meilleures sélections</p>
-
-    </div>
-
-
-    <div class="benefit">
-
-        <div class="benefit-icon">🇲🇦</div>
-
-        <h4>Livraison partout au Maroc</h4>
-
-        <p>À domicile dans tout le Maroc</p>
-
-    </div>
-
-
-    <div class="benefit">
-
-        <div class="benefit-icon">🎁</div>
-
-        <h4>Emballage cadeau</h4>
-
-        <p>Disponible sur demande</p>
-
-    </div>
-
-</div>
-
-</div>
-
 
 <!-- =====================================================
-     SEARCH
+     STORY
 ===================================================== -->
 
-<div class="search-section" id="search">
+<section id="histoire">
 
-<div class="search-box">
+    <h2 class="section-title">
+        Une nouvelle histoire
+    </h2>
 
-    <input
-    type="text"
-    id="searchInput"
-    placeholder="Rechercher un produit, une marque, un parfum..."
-    onkeyup="searchProducts()">
+    <div class="divider"></div>
 
-    <button onclick="searchProducts()">
-        RECHERCHER
-    </button>
+    <div class="story">
 
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
-
-<section id="categories">
-
-<div class="section-head">
-
-    <small>Explorez notre univers</small>
-
-    <h2>Nos catégories</h2>
-
-    <p>
-        Une sélection pensée pour celles et ceux qui aiment
-        les produits élégants, tendance et difficiles à trouver
-        au Maroc.
-    </p>
-
-</div>
-
-
-<div class="categories">
-
-    <div class="category" onclick="filterProducts('parfum')">
-
-        <div class="category-icon">🌹</div>
-
-        <h3>Parfums</h3>
-
-        <p>Des fragrances iconiques</p>
-
-    </div>
-
-
-    <div class="category" onclick="filterProducts('makeup')">
-
-        <div class="category-icon">💄</div>
-
-        <h3>Makeup</h3>
-
-        <p>Beauty & maquillage</p>
-
-    </div>
-
-
-    <div class="category" onclick="filterProducts('skincare')">
-
-        <div class="category-icon">✨</div>
-
-        <h3>Skincare</h3>
-
-        <p>Soins visage & peau</p>
-
-    </div>
-
-
-    <div class="category" onclick="filterProducts('haircare')">
-
-        <div class="category-icon">🧴</div>
-
-        <h3>Haircare</h3>
-
-        <p>Soins cheveux</p>
-
-    </div>
-
-
-    <div class="category" onclick="filterProducts('body')">
-
-        <div class="category-icon">🛁</div>
-
-        <h3>Body Care</h3>
-
-        <p>Soins du corps</p>
-
-    </div>
-
-
-    <div class="category" onclick="filterProducts('fashion')">
-
-        <div class="category-icon">👗</div>
-
-        <h3>Mode</h3>
-
-        <p>Fashion & accessoires</p>
-
-    </div>
-
-
-    <div class="category" onclick="filterProducts('gift')">
-
-        <div class="category-icon">🎁</div>
-
-        <h3>Coffrets</h3>
-
-        <p>Idées cadeaux</p>
-
-    </div>
-
-
-    <div class="category" onclick="filterProducts('luxury')">
-
-        <div class="category-icon">💎</div>
-
-        <h3>Luxury</h3>
-
-        <p>Sélection exclusive</p>
-
-    </div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     FRANCE & ESPAGNE
-===================================================== -->
-
-<section id="france-espagne">
-
-<div class="section-head">
-
-    <small>Made in Europe</small>
-
-    <h2>France & Espagne</h2>
-
-    <p>
-        Nous recherchons pour vous les produits les plus
-        intéressants disponibles en Europe.
-    </p>
-
-</div>
-
-
-<div class="origins">
-
-    <div class="origin france">
-
-        <div class="origin-flag">🇫🇷</div>
-
-        <h3>Sélection France</h3>
+        <p class="arabic">
+            وَجَعَلَ اللهُ بَيْنَكُمَا مَوَدَّةً وَرَحْمَةً
+        </p>
 
         <p>
-            Découvrez une sélection de beauté,
-            parfums, soins et produits tendance
-            provenant de France.
+            Avec beaucoup de bonheur et d'émotion,
+            nous avons le plaisir de vous inviter
+            à célébrer avec nous le début de notre
+            nouvelle vie à deux.
         </p>
 
-        <a href="#request" class="btn btn-dark">
-            Demander un produit
-        </a>
-
-    </div>
-
-
-    <div class="origin spain">
-
-        <div class="origin-flag">🇪🇸</div>
-
-        <h3>Sélection Espagne</h3>
+        <br>
 
         <p>
-            Les meilleures trouvailles beauté,
-            mode et lifestyle disponibles en Espagne.
+            Votre présence rendra cette journée
+            encore plus belle et restera pour nous
+            un souvenir précieux.
         </p>
 
-        <a href="#request" class="btn btn-dark">
-            Demander un produit
-        </a>
-
     </div>
-
-</div>
 
 </section>
 
 
+
 <!-- =====================================================
-     PRODUCTS
+     DETAILS
 ===================================================== -->
 
-<section id="produits">
+<section
+    class="details"
+    id="details"
+>
 
-<div class="section-head">
+    <h2 class="section-title">
+        Le grand jour
+    </h2>
 
-    <small>Luxury Products Maroc</small>
-
-    <h2>Notre sélection</h2>
-
-    <p>
-        Quelques inspirations de produits.
-        Vous pouvez également nous demander un produit
-        précis que vous avez vu en France ou en Espagne.
-    </p>
-
-</div>
-
-
-<div class="filters">
-
-    <button class="filter active"
-    onclick="filterProducts('all',this)">
-        Tous
-    </button>
-
-    <button class="filter"
-    onclick="filterProducts('parfum',this)">
-        Parfums
-    </button>
-
-    <button class="filter"
-    onclick="filterProducts('makeup',this)">
-        Makeup
-    </button>
-
-    <button class="filter"
-    onclick="filterProducts('skincare',this)">
-        Skincare
-    </button>
-
-    <button class="filter"
-    onclick="filterProducts('body',this)">
-        Body Care
-    </button>
-
-    <button class="filter"
-    onclick="filterProducts('gift',this)">
-        Coffrets
-    </button>
-
-</div>
-
-
-<div class="products" id="productGrid">
-
-
-<!-- PRODUCT 1 -->
-
-<div class="product"
-data-category="parfum"
-data-name="parfum rose">
-
-    <div class="product-img">
-
-        <div class="product-badge">
-            BEST SELLER
-        </div>
-
-        <span>🌹</span>
-
+    <div class="section-subtitle">
+        Nous avons hâte de vous retrouver
     </div>
 
-    <div class="product-info">
+    <div class="cards">
 
-        <div class="brand">
-            Luxury Fragrance
+
+        <div class="card">
+
+            <div class="card-icon">
+                ♡
+            </div>
+
+            <h3>
+                DATE
+            </h3>
+
+            <p>
+                Samedi<br>
+                10 Octobre 2026
+            </p>
+
         </div>
 
-        <h3>Rose Signature</h3>
 
-        <p class="product-desc">
-            Une fragrance élégante et féminine.
-        </p>
+        <div class="card">
 
-        <div class="price">
-            149 DH
+            <div class="card-icon">
+                ◷
+            </div>
+
+            <h3>
+                HEURE
+            </h3>
+
+            <p>
+                À partir de<br>
+                18:00
+            </p>
+
         </div>
 
-        <button class="product-btn"
-        onclick="requestProduct('Rose Signature')">
-            Demander ce produit
-        </button>
+
+        <div class="card">
+
+            <div class="card-icon">
+                ⌖
+            </div>
+
+            <h3>
+                LE LIEU
+            </h3>
+
+            <p>
+                Dar Mekhtara<br>
+                Meknès
+            </p>
+
+            <a
+                class="map-button"
+                href="https://maps.app.goo.gl/gNJ5ED1HyvU8enjd7?g_st=ic"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                VOIR L’ITINÉRAIRE
+            </a>
+
+        </div>
 
     </div>
-
-</div>
-
-
-<!-- PRODUCT 2 -->
-
-<div class="product"
-data-category="makeup"
-data-name="makeup gloss">
-
-    <div class="product-img">
-
-        <div class="product-badge">
-            NEW
-        </div>
-
-        <span>💄</span>
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="brand">
-            Beauty
-        </div>
-
-        <h3>Gloss Collection</h3>
-
-        <p class="product-desc">
-            Une sélection makeup ultra tendance.
-        </p>
-
-        <div class="price">
-            99 DH
-        </div>
-
-        <button class="product-btn"
-        onclick="requestProduct('Gloss Collection')">
-            Demander ce produit
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- PRODUCT 3 -->
-
-<div class="product"
-data-category="skincare"
-data-name="skincare serum">
-
-    <div class="product-img">
-
-        <div class="product-badge">
-            BEAUTY
-        </div>
-
-        <span>✨</span>
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="brand">
-            Skincare
-        </div>
-
-        <h3>Glow Serum</h3>
-
-        <p class="product-desc">
-            Soin éclat pour une peau lumineuse.
-        </p>
-
-        <div class="price">
-            129 DH
-        </div>
-
-        <button class="product-btn"
-        onclick="requestProduct('Glow Serum')">
-            Demander ce produit
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- PRODUCT 4 -->
-
-<div class="product"
-data-category="body"
-data-name="body lotion">
-
-    <div class="product-img">
-
-        <span>🧴</span>
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="brand">
-            Body Care
-        </div>
-
-        <h3>Luxury Body Care</h3>
-
-        <p class="product-desc">
-            Une routine corps douce et parfumée.
-        </p>
-
-        <div class="price">
-            119 DH
-        </div>
-
-        <button class="product-btn"
-        onclick="requestProduct('Luxury Body Care')">
-            Demander ce produit
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- PRODUCT 5 -->
-
-<div class="product"
-data-category="gift"
-data-name="gift coffret">
-
-    <div class="product-img">
-
-        <div class="product-badge">
-            GIFT
-        </div>
-
-        <span>🎁</span>
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="brand">
-            Gift Collection
-        </div>
-
-        <h3>Luxury Gift Box</h3>
-
-        <p class="product-desc">
-            Coffret élégant prêt à offrir.
-        </p>
-
-        <div class="price">
-            199 DH
-        </div>
-
-        <button class="product-btn"
-        onclick="requestProduct('Luxury Gift Box')">
-            Demander ce produit
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- PRODUCT 6 -->
-
-<div class="product"
-data-category="haircare"
-data-name="haircare cheveux">
-
-    <div class="product-img">
-
-        <span>🪮</span>
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="brand">
-            Haircare
-        </div>
-
-        <h3>Hair Ritual</h3>
-
-        <p class="product-desc">
-            Une sélection pour prendre soin de vos cheveux.
-        </p>
-
-        <div class="price">
-            139 DH
-        </div>
-
-        <button class="product-btn"
-        onclick="requestProduct('Hair Ritual')">
-            Demander ce produit
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- PRODUCT 7 -->
-
-<div class="product"
-data-category="fashion"
-data-name="sac fashion">
-
-    <div class="product-img">
-
-        <span>👜</span>
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="brand">
-            Fashion
-        </div>
-
-        <h3>Paris Bag</h3>
-
-        <p class="product-desc">
-            Accessoire chic inspiré de la mode parisienne.
-        </p>
-
-        <div class="price">
-            249 DH
-        </div>
-
-        <button class="product-btn"
-        onclick="requestProduct('Paris Bag')">
-            Demander ce produit
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- PRODUCT 8 -->
-
-<div class="product"
-data-category="luxury"
-data-name="luxury coffret premium">
-
-    <div class="product-img">
-
-        <div class="product-badge">
-            EXCLUSIVE
-        </div>
-
-        <span>💎</span>
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="brand">
-            Luxury Selection
-        </div>
-
-        <h3>Premium Collection</h3>
-
-        <p class="product-desc">
-            Une sélection exclusive disponible sur commande.
-        </p>
-
-        <div class="price">
-            Sur demande
-        </div>
-
-        <button class="product-btn"
-        onclick="requestProduct('Premium Collection')">
-            Demander ce produit
-        </button>
-
-    </div>
-
-</div>
-
-</div>
 
 </section>
 
 
+
 <!-- =====================================================
-     GIFT WRAPPING
+     COUNTDOWN
 ===================================================== -->
 
-<section class="gift-section" id="cadeau">
+<section>
 
-<div class="gift-container">
+    <h2 class="section-title">
+        Le compte à rebours
+    </h2>
 
-    <div class="gift-visual">
+    <div class="divider"></div>
 
-        <div class="gift-box"></div>
+    <div class="countdown">
 
-    </div>
+        <div class="time-box">
+
+            <div
+                class="time-number"
+                id="days"
+            >
+                00
+            </div>
+
+            <div class="time-label">
+                Jours
+            </div>
+
+        </div>
 
 
-    <div class="gift-content">
+        <div class="time-box">
 
-        <small>Une attention spéciale</small>
+            <div
+                class="time-number"
+                id="hours"
+            >
+                00
+            </div>
 
-        <h2>Emballage cadeau 🎁</h2>
+            <div class="time-label">
+                Heures
+            </div>
 
-        <p>
-            Vous souhaitez offrir votre commande ?
-            Nous proposons une option d'emballage cadeau
-            élégante et soignée pour vos occasions spéciales.
-        </p>
+        </div>
 
-        <div class="gift-options">
 
-            <button class="gift-option selected"
-            onclick="selectGift(this,'Oui')">
-                🎁 Oui, emballage cadeau
-            </button>
+        <div class="time-box">
 
-            <button class="gift-option"
-            onclick="selectGift(this,'Non')">
-                Sans emballage
-            </button>
+            <div
+                class="time-number"
+                id="minutes"
+            >
+                00
+            </div>
+
+            <div class="time-label">
+                Minutes
+            </div>
+
+        </div>
+
+
+        <div class="time-box">
+
+            <div
+                class="time-number"
+                id="seconds"
+            >
+                00
+            </div>
+
+            <div class="time-label">
+                Secondes
+            </div>
 
         </div>
 
     </div>
 
-</div>
-
 </section>
 
 
+
 <!-- =====================================================
-     PRODUCT REQUEST
+     RSVP
 ===================================================== -->
 
-<section class="request-section" id="request">
+<section
+    class="rsvp"
+    id="rsvp"
+>
 
-<div class="request-container">
+    <h2 class="section-title">
+        Votre présence
+    </h2>
 
-    <div class="request-title">
+    <div class="divider"></div>
 
-        <small>Vous cherchez quelque chose ?</small>
-
-        <h2>Nous le recherchons pour vous.</h2>
+    <div class="rsvp-text">
 
         <p>
-            Vous avez vu un produit en France ou en Espagne
-            mais vous ne le trouvez pas sur notre site ?
-            Envoyez-nous son nom, une photo ou un lien.
-            Nous vous répondrons avec le prix et la disponibilité.
+            Nous serions honorés de vous compter
+            parmi nous pour partager ce merveilleux
+            moment.
+        </p>
+
+        <p>
+            Merci de confirmer votre présence.
         </p>
 
     </div>
 
 
-    <!--
-      IMPORTANT:
-      Remplace "VOTRE_EMAIL" par ton email si tu utilises
-      FormSubmit.
-
-      Ton email :
-      Najwa.elalaoui2005@gmail.com
-    -->
+    <!-- =================================================
+         RSVP FORM
+    ================================================== -->
 
     <form
-    class="request-form"
-    action="https://formsubmit.co/Najwa.elalaoui2005@gmail.com"
-    method="POST">
+        class="rsvp-form"
+        id="rsvpForm"
+        action="https://formsubmit.co/ajax/najwa.elalaoui2005@gmail.com"
+        method="POST"
+    >
 
-        <input type="hidden"
-        name="_subject"
-        value="Nouvelle demande - Luxury Products Maroc">
+        <!-- FormSubmit settings -->
 
-        <input type="hidden"
-        name="_captcha"
-        value="false">
+        <input
+            type="hidden"
+            name="_subject"
+            value="💍 Nouvelle confirmation — Mariage Omaima & Driss"
+        >
 
-        <input type="hidden"
-        name="_template"
-        value="table">
+        <input
+            type="hidden"
+            name="_captcha"
+            value="false"
+        >
+
+        <input
+            type="hidden"
+            name="_template"
+            value="table"
+        >
 
 
-        <div class="form-grid">
+        <!-- NOM -->
 
-            <div>
+        <div class="form-group">
 
-                <input
+            <label
+                class="form-label"
+                for="nom"
+            >
+                Nom & Prénom
+            </label>
+
+            <input
+                class="form-input"
                 type="text"
-                name="Nom"
-                placeholder="Votre nom *"
-                required>
+                id="nom"
+                name="Nom & Prénom"
+                placeholder="Votre nom et prénom"
+                required
+            >
 
-            </div>
-
-
-            <div>
-
-                <input
-                type="tel"
-                name="Téléphone"
-                placeholder="Votre numéro WhatsApp *"
-                required>
-
-            </div>
+        </div>
 
 
-            <div>
+        <!-- NOMBRE -->
 
-                <input
-                type="email"
-                name="Email"
-                placeholder="Votre email">
+        <div class="form-group">
 
-            </div>
+            <label
+                class="form-label"
+                for="nombre"
+            >
+                Nombre de personnes
+            </label>
+
+            <select
+                class="form-select"
+                id="nombre"
+                name="Nombre de personnes"
+                required
+            >
+
+                <option value="">
+                    Sélectionnez
+                </option>
+
+                <option value="1 personne">
+                    1 personne
+                </option>
+
+                <option value="2 personnes">
+                    2 personnes
+                </option>
+
+                <option value="3 personnes">
+                    3 personnes
+                </option>
+
+                <option value="4 personnes">
+                    4 personnes
+                </option>
+
+                <option value="5 personnes">
+                    5 personnes
+                </option>
+
+                <option value="6 personnes">
+                    6 personnes
+                </option>
+
+                <option value="7 personnes">
+                    7 personnes
+                </option>
+
+                <option value="8 personnes">
+                    8 personnes
+                </option>
+
+                <option value="9 personnes">
+                    9 personnes
+                </option>
+
+                <option value="10 personnes">
+                    10 personnes
+                </option>
+
+            </select>
+
+        </div>
 
 
-            <div>
+        <!-- REPONSE -->
 
-                <input
-                type="text"
-                name="Ville"
-                placeholder="Votre ville au Maroc *"
-                required>
+        <div class="form-group">
 
-            </div>
+            <label class="form-label">
+                Votre réponse
+            </label>
 
-
-            <div class="full">
-
-                <input
-                type="text"
-                id="productRequest"
-                name="Produit recherché"
-                placeholder="Nom du produit / marque / lien">
-
-            </div>
+            <div class="radio-group">
 
 
-            <div class="full">
-
-                <textarea
-                name="Message"
-                placeholder="Décrivez le produit que vous recherchez..."></textarea>
-
-            </div>
-
-
-            <div class="full">
-
-                <label class="gift-check">
+                <label class="radio-option">
 
                     <input
-                    type="checkbox"
-                    id="giftCheck"
-                    name="Emballage cadeau"
-                    value="Oui"
-                    checked
-                    onchange="toggleGiftMessage()">
+                        type="radio"
+                        name="Réponse"
+                        value="Je serai présent(e)"
+                        required
+                    >
 
-                    🎁 Je souhaite un emballage cadeau
+                    <span class="radio-circle"></span>
+
+                    <span class="radio-text">
+                        ♡ Je serai présent(e)
+                    </span>
 
                 </label>
 
-            </div>
 
+                <label class="radio-option">
 
-            <div class="full gift-message show"
-            id="giftMessageBox">
+                    <input
+                        type="radio"
+                        name="Réponse"
+                        value="Je ne pourrai pas être présent(e)"
+                    >
 
-                <textarea
-                name="Message cadeau"
-                placeholder="Petit message à mettre avec le cadeau (facultatif)..."></textarea>
+                    <span class="radio-circle"></span>
 
-            </div>
+                    <span class="radio-text">
+                        Je ne pourrai pas être présent(e)
+                    </span>
 
+                </label>
 
-            <div class="full">
-
-                <button
-                type="submit"
-                class="btn btn-dark"
-                style="width:100%;">
-
-                    ✨ Envoyer ma demande
-
-                </button>
 
             </div>
 
         </div>
 
+
+        <!-- MESSAGE -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="message"
+            >
+                Message
+            </label>
+
+            <textarea
+                class="form-message"
+                id="message"
+                name="Message"
+                placeholder="Écrivez un petit message pour les mariés..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            class="rsvp-submit"
+            id="submitButton"
+        >
+            CONFIRMER MA PRÉSENCE
+        </button>
+
     </form>
 
-</div>
+
+    <!-- =================================================
+         SUCCESS
+    ================================================== -->
+
+    <div
+        class="success-message"
+        id="successMessage"
+    >
+
+        <div class="success-title">
+            Merci ♡
+        </div>
+
+        <p>
+            Votre réponse a bien été enregistrée.
+        </p>
+
+        <p>
+            Omaima & Driss vous remercient
+            chaleureusement pour votre présence
+            et votre message.
+        </p>
+
+        <p>
+            ✨ Au plaisir de célébrer ce merveilleux
+            moment avec vous ✨
+        </p>
+
+    </div>
+
 
 </section>
 
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section id="contact">
-
-<div class="section-head">
-
-    <small>Luxury Products Maroc</small>
-
-    <h2>Restons connectés</h2>
-
-    <p>
-        Une question, une commande ou un produit précis ?
-        Contactez-nous directement.
-    </p>
-
-</div>
-
-
-<div class="contact-grid">
-
-
-    <!-- WHATSAPP -->
-
-    <div class="contact-card">
-
-        <div class="contact-icon">💬</div>
-
-        <h3>WhatsApp</h3>
-
-        <p>
-            Commandes & renseignements
-        </p>
-
-        <a
-        href="https://wa.me/212778231455"
-        target="_blank">
-
-            +212 778 231 455
-
-        </a>
-
-    </div>
-
-
-    <!-- EMAIL -->
-
-    <div class="contact-card">
-
-        <div class="contact-icon">📧</div>
-
-        <h3>Email</h3>
-
-        <p>
-            Demandes de produits
-        </p>
-
-        <a
-        href="mailto:Najwa.elalaoui2005@gmail.com">
-
-            Najwa.elalaoui2005@gmail.com
-
-        </a>
-
-    </div>
-
-
-    <!-- INSTAGRAM -->
-
-    <div class="contact-card">
-
-        <div class="contact-icon">📸</div>
-
-        <h3>Instagram</h3>
-
-        <p>
-            Découvrez nos nouveautés
-        </p>
-
-        <a
-        href="https://www.instagram.com/luxury_product_maroc/"
-        target="_blank">
-
-            @luxury_product_maroc
-
-        </a>
-
-    </div>
-
-
-    <!-- TIKTOK -->
-
-    <div class="contact-card">
-
-        <div class="contact-icon">🎵</div>
-
-        <h3>TikTok</h3>
-
-        <p>
-            Suivez nos vidéos
-        </p>
-
-        <a
-        href="https://www.tiktok.com/@luxury_mar"
-        target="_blank">
-
-            @Luxury_mar
-
-        </a>
-
-    </div>
-
-</div>
-
-</section>
 
 
 <!-- =====================================================
@@ -2317,385 +1829,255 @@ data-name="luxury coffret premium">
 
 <footer>
 
-<div class="footer-grid">
-
-    <div>
-
-        <div class="footer-logo">
-            LUXURY <span>PRODUCTS</span>
-        </div>
-
-        <p>
-            Luxury Products Maroc sélectionne pour vous
-            des produits tendance et premium provenant
-            principalement de France et d'Espagne,
-            avec livraison partout au Maroc.
-        </p>
-
+    <div class="footer-names">
+        Omaima & Driss
     </div>
 
+    <p>
+        10 · 10 · 2026
+    </p>
 
-    <div>
-
-        <h4>NAVIGATION</h4>
-
-        <a href="#accueil">Accueil</a>
-        <a href="#categories">Catégories</a>
-        <a href="#produits">Produits</a>
-        <a href="#cadeau">Emballage cadeau</a>
-
-    </div>
-
-
-    <div>
-
-        <h4>CONTACT</h4>
-
-        <a href="https://wa.me/212778231455">
-            WhatsApp
-        </a>
-
-        <a href="mailto:Najwa.elalaoui2005@gmail.com">
-            Email
-        </a>
-
-        <a href="https://www.instagram.com/luxury_product_maroc/">
-            Instagram
-        </a>
-
-        <a href="https://www.tiktok.com/@luxury_mar">
-            TikTok
-        </a>
-
-    </div>
-
-</div>
-
-
-<div class="footer-bottom">
-
-    ©️ 2026 Luxury Products Maroc — Tous droits réservés.
-
-</div>
+    <p>
+        Avec tout notre amour ♡
+    </p>
 
 </footer>
 
 
-<!-- =====================================================
-     FLOATING BUTTONS
-===================================================== -->
-
-<div class="floating">
-
-    <a
-    class="float-btn whatsapp"
-    href="https://wa.me/212778231455"
-    target="_blank"
-    title="WhatsApp">
-
-        💬
-
-    </a>
-
-
-    <a
-    class="float-btn instagram"
-    href="https://www.instagram.com/luxury_product_maroc/"
-    target="_blank"
-    title="Instagram">
-
-        ◎
-
-    </a>
-
-
-    <a
-    class="float-btn tiktok"
-    href="https://www.tiktok.com/@luxury_mar"
-    target="_blank"
-    title="TikTok">
-
-        ♪
-
-    </a>
-
 </div>
 
 
+
 <!-- =====================================================
-     TOAST
+     JAVASCRIPT
 ===================================================== -->
-
-<div class="toast" id="toast"></div>
-
 
 <script>
 
+
 /* =====================================================
-   TOAST
+   OPEN INVITATION
 ===================================================== */
 
-function showToast(message){
+function openInvitation(){
 
-    const toast = document.getElementById("toast");
+    const intro =
+        document.getElementById("intro");
 
-    toast.textContent = message;
+    const website =
+        document.getElementById("website");
 
-    toast.classList.add("show");
+
+    intro.classList.add("hide");
+
 
     setTimeout(function(){
 
-        toast.classList.remove("show");
+        website.classList.add("show");
 
-    },3000);
+        document.body.style.overflowY =
+            "auto";
 
-}
-
-
-/* =====================================================
-   PRODUCT REQUEST
-===================================================== */
-
-function requestProduct(product){
-
-    document.getElementById("productRequest").value = product;
-
-    document.getElementById("request").scrollIntoView({
-        behavior:"smooth"
-    });
+    },700);
 
 }
 
 
+
 /* =====================================================
-   FILTER PRODUCTS
+   COUNTDOWN
 ===================================================== */
 
-function filterProducts(category,button){
-
-    const products = document.querySelectorAll(".product");
-
-    products.forEach(function(product){
-
-        if(category === "all"){
-
-            product.style.display = "block";
-
-        }else{
-
-            if(product.dataset.category === category){
-
-                product.style.display = "block";
-
-            }else{
-
-                product.style.display = "none";
-
-            }
-
-        }
-
-    });
+const weddingDate =
+    new Date(
+        "October 10, 2026 18:00:00"
+    ).getTime();
 
 
-    if(button){
+function updateCountdown(){
 
-        document.querySelectorAll(".filter")
-        .forEach(function(btn){
+    const now =
+        new Date().getTime();
 
-            btn.classList.remove("active");
+    const difference =
+        weddingDate - now;
 
-        });
 
-        button.classList.add("active");
+    if(difference <= 0){
 
+        document.getElementById("days").innerHTML =
+            "00";
+
+        document.getElementById("hours").innerHTML =
+            "00";
+
+        document.getElementById("minutes").innerHTML =
+            "00";
+
+        document.getElementById("seconds").innerHTML =
+            "00";
+
+        return;
     }
 
-}
+
+    const days =
+        Math.floor(
+            difference /
+            (1000 * 60 * 60 * 24)
+        );
 
 
-/* =====================================================
-   SEARCH
-===================================================== */
-
-function searchProducts(){
-
-    const value =
-    document
-    .getElementById("searchInput")
-    .value
-    .toLowerCase()
-    .trim();
-
-    const products =
-    document.querySelectorAll(".product");
-
-    products.forEach(function(product){
-
-        const name =
-        product.dataset.name.toLowerCase();
-
-        const title =
-        product
-        .querySelector("h3")
-        .textContent
-        .toLowerCase();
-
-        const brand =
-        product
-        .querySelector(".brand")
-        .textContent
-        .toLowerCase();
+    const hours =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+        );
 
 
-        if(
-            name.includes(value) ||
-            title.includes(value) ||
-            brand.includes(value)
-        ){
-
-            product.style.display = "block";
-
-        }else{
-
-            product.style.display = "none";
-
-        }
-
-    });
-
-}
+    const minutes =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+        );
 
 
-/* =====================================================
-   GIFT OPTION
-===================================================== */
+    const seconds =
+        Math.floor(
+            (
+                difference %
+                (1000 * 60)
+            ) /
+            1000
+        );
 
-let giftChoice = "Oui";
 
-function selectGift(button,choice){
+    document.getElementById("days").innerHTML =
+        String(days).padStart(2,"0");
 
-    document
-    .querySelectorAll(".gift-option")
-    .forEach(function(btn){
 
-        btn.classList.remove("selected");
+    document.getElementById("hours").innerHTML =
+        String(hours).padStart(2,"0");
 
-    });
 
-    button.classList.add("selected");
+    document.getElementById("minutes").innerHTML =
+        String(minutes).padStart(2,"0");
 
-    giftChoice = choice;
 
-    if(choice === "Oui"){
-
-        showToast("🎁 Emballage cadeau sélectionné");
-
-    }else{
-
-        showToast("Option sans emballage sélectionnée");
-
-    }
+    document.getElementById("seconds").innerHTML =
+        String(seconds).padStart(2,"0");
 
 }
 
 
-/* =====================================================
-   GIFT MESSAGE
-===================================================== */
+updateCountdown();
 
-function toggleGiftMessage(){
-
-    const checkbox =
-    document.getElementById("giftCheck");
-
-    const box =
-    document.getElementById("giftMessageBox");
-
-
-    if(checkbox.checked){
-
-        box.classList.add("show");
-
-    }else{
-
-        box.classList.remove("show");
-
-    }
-
-}
-
-
-/* =====================================================
-   INTERSECTION ANIMATION
-===================================================== */
-
-const observer =
-new IntersectionObserver(
-
-    function(entries){
-
-        entries.forEach(function(entry){
-
-            if(entry.isIntersecting){
-
-                entry.target.style.opacity = "1";
-
-                entry.target.style.transform =
-                "translateY(0)";
-
-            }
-
-        });
-
-    },
-
-    {
-        threshold:.1
-    }
-
+setInterval(
+    updateCountdown,
+    1000
 );
 
 
-document
-.querySelectorAll(
-".category,.product,.origin,.contact-card,.benefit"
-)
-.forEach(function(element){
-
-    element.style.opacity = "0";
-
-    element.style.transform =
-    "translateY(25px)";
-
-    element.style.transition =
-    "opacity .7s ease, transform .7s ease";
-
-    observer.observe(element);
-
-});
-
 
 /* =====================================================
-   ESCAPE LOADER
+   RSVP — SEND WITHOUT LEAVING THE WEBSITE
 ===================================================== */
 
-window.addEventListener("load",function(){
+const rsvpForm =
+    document.getElementById("rsvpForm");
 
-    setTimeout(function(){
+const successMessage =
+    document.getElementById("successMessage");
 
-        const loader =
-        document.querySelector(".loader");
+const submitButton =
+    document.getElementById("submitButton");
 
-        if(loader){
 
-            loader.style.display = "none";
+rsvpForm.addEventListener(
+    "submit",
+    async function(event){
+
+        event.preventDefault();
+
+
+        submitButton.disabled = true;
+
+        submitButton.innerText =
+            "ENVOI EN COURS...";
+
+
+        const formData =
+            new FormData(rsvpForm);
+
+
+        try{
+
+            const response =
+                await fetch(
+                    rsvpForm.action,
+                    {
+                        method:"POST",
+                        body:formData,
+                        headers:{
+                            "Accept":"application/json"
+                        }
+                    }
+                );
+
+
+            if(response.ok){
+
+                rsvpForm.style.display =
+                    "none";
+
+                successMessage.classList.add(
+                    "show"
+                );
+
+                successMessage.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+            }else{
+
+                throw new Error(
+                    "Erreur lors de l'envoi"
+                );
+
+            }
+
+        }catch(error){
+
+            submitButton.disabled = false;
+
+            submitButton.innerText =
+                "CONFIRMER MA PRÉSENCE";
+
+            alert(
+                "Une erreur est survenue. Veuillez réessayer."
+            );
 
         }
 
-    },3500);
+    }
+);
 
-});
+
+
+/* =====================================================
+   LOCK SCROLL BEFORE OPENING
+===================================================== */
+
+document.body.style.overflow =
+    "hidden";
+
 
 </script>
 
