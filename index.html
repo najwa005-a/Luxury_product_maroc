@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luxury Products Maroc | France & Espagne</title>
-<meta name="description" content="Luxury Products Maroc — Les meilleurs produits de France et d'Espagne. Livraison partout au Maroc. Emballage cadeau disponible.">
+<meta name="description" content="Luxury Products Maroc — Produits de France et d'Espagne, livraison partout au Maroc, emballage cadeau disponible.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -39,9 +39,7 @@ textarea{
     --dark:#211b1d;
     --light-pink:#f8edf0;
 }
-/* =========================
-   LOADER
-========================= */
+/* LOADER */
 .loader{
     position:fixed;
     inset:0;
@@ -61,6 +59,7 @@ textarea{
     font-family:'Cormorant Garamond',serif;
     font-size:46px;
     letter-spacing:5px;
+    text-align:center;
 }
 .loader-logo span{
     color:var(--gold);
@@ -93,9 +92,7 @@ textarea{
         transform:translateX(0);
     }
 }
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 header{
     position:fixed;
     top:0;
@@ -144,9 +141,7 @@ nav a:hover{
     font-size:25px;
     cursor:pointer;
 }
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero{
     min-height:100vh;
     padding:135px 7% 80px;
@@ -175,14 +170,12 @@ nav a:hover{
     color:var(--pink-dark);
     font-style:italic;
 }
-.hero-text{
-    max-width:600px;
-}
 .hero-text p{
     margin:30px 0;
     color:#746c6e;
     font-size:10px;
     line-height:2;
+    max-width:600px;
 }
 .buttons{
     display:flex;
@@ -277,9 +270,7 @@ nav a:hover{
     font-family:'Cormorant Garamond',serif;
     font-size:22px;
 }
-/* =========================
-   BENEFITS
-========================= */
+/* BENEFITS */
 .benefits{
     background:#fff;
     padding:30px 7%;
@@ -308,9 +299,7 @@ nav a:hover{
     font-size:8px;
     margin-top:5px;
 }
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 .search-area{
     background:#fff;
     padding:35px 7%;
@@ -338,9 +327,7 @@ nav a:hover{
     font-size:8px;
     letter-spacing:1px;
 }
-/* =========================
-   GENERAL SECTION
-========================= */
+/* SECTIONS */
 section{
     padding:90px 7%;
 }
@@ -367,9 +354,7 @@ section{
     font-size:10px;
     line-height:1.9;
 }
-/* =========================
-   FRANCE / ESPAGNE
-========================= */
+/* ORIGINS */
 .origins{
     max-width:1200px;
     margin:auto;
@@ -402,9 +387,7 @@ section{
     line-height:1.9;
     margin:10px 0 20px;
 }
-/* =========================
-   PRODUCTS
-========================= */
+/* PRODUCTS */
 .filters{
     display:flex;
     justify-content:center;
@@ -539,9 +522,7 @@ section{
     background:#f5e6eb;
     color:var(--dark);
 }
-/* =========================
-   GIFT
-========================= */
+/* GIFT */
 .gift-section{
     background:#f8edf0;
 }
@@ -599,9 +580,7 @@ section{
     line-height:1.9;
     margin-bottom:20px;
 }
-/* =========================
-   REQUEST FORM
-========================= */
+/* REQUEST */
 .request-section{
     background:var(--dark);
     color:#fff;
@@ -685,12 +664,14 @@ section{
 .checkbox input{
     width:auto;
 }
+.gift-price{
+    color:var(--pink-dark);
+    font-weight:600;
+}
 .submit-btn{
     width:100%;
 }
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 .contact-grid{
     max-width:1200px;
     margin:auto;
@@ -727,9 +708,7 @@ section{
     font-weight:600;
     word-break:break-word;
 }
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 footer{
     background:#181415;
     color:#fff;
@@ -777,9 +756,7 @@ footer a{
     color:#777;
     font-size:8px;
 }
-/* =========================
-   FLOATING BUTTONS
-========================= */
+/* FLOATING */
 .floating{
     position:fixed;
     right:16px;
@@ -809,9 +786,7 @@ footer a{
 .float-tiktok{
     background:#111;
 }
-/* =========================
-   THANK YOU
-========================= */
+/* THANK YOU */
 .thank-you{
     position:fixed;
     inset:0;
@@ -878,9 +853,7 @@ footer a{
     gap:10px;
     flex-wrap:wrap;
 }
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 @media(max-width:900px){
     nav{
         display:none;
@@ -958,9 +931,7 @@ footer a{
 </style>
 </head>
 <body>
-<!-- =========================
-     LOADER
-========================= -->
+<!-- LOADER -->
 <div class="loader" id="loader">
     <div class="loader-logo">
         LUXURY <span>PRODUCTS</span>
@@ -972,9 +943,7 @@ footer a{
         <span></span>
     </div>
 </div>
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 <header>
 <div class="navbar">
 <a href="#accueil" class="logo">
@@ -995,9 +964,7 @@ onclick="toggleMenu()">
 </button>
 </div>
 </header>
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 <section class="hero" id="accueil">
 <div class="hero-text">
 <div class="eyebrow">
@@ -1015,7 +982,7 @@ onclick="toggleMenu()">
     <br><br>
     🇲🇦 Livraison partout au Maroc
     <br>
-    🎁 Emballage cadeau disponible
+    🎁 Emballage cadeau disponible <strong>(+20 DH)</strong>
 </p>
 <div class="buttons">
 <a href="#produits" class="btn btn-dark">
@@ -1064,9 +1031,7 @@ BOUQUET
 </div>
 </div>
 </section>
-<!-- =========================
-     BENEFITS
-========================= -->
+<!-- BENEFITS -->
 <div class="benefits">
 <div class="benefit-grid">
 <div class="benefit">
@@ -1107,17 +1072,15 @@ Partout au Maroc
 🎁
 </div>
 <h4>
-Emballage
+Emballage cadeau
 </h4>
 <p>
-Cadeau disponible
++20 DH
 </p>
 </div>
 </div>
 </div>
-<!-- =========================
-     SEARCH
-========================= -->
+<!-- SEARCH -->
 <div class="search-area">
 <div class="search-box">
 <input
@@ -1130,9 +1093,7 @@ RECHERCHER
 </button>
 </div>
 </div>
-<!-- =========================
-     ORIGINS
-========================= -->
+<!-- ORIGINS -->
 <section id="origines">
 <div class="section-title">
 <small>
@@ -1174,9 +1135,7 @@ RECHERCHER
 </div>
 </div>
 </section>
-<!-- =========================
-     PRODUCTS
-========================= -->
+<!-- PRODUCTS -->
 <section id="produits">
 <div class="section-title">
 <small>
@@ -1218,7 +1177,7 @@ Mode
 </button>
 </div>
 <div class="products" id="products">
-<!-- PRODUCT 1 -->
+<!-- DIAMANT -->
 <div
 class="product"
 data-category="parfum"
@@ -1268,7 +1227,7 @@ Demander
 </div>
 </div>
 </div>
-<!-- PRODUCT 2 -->
+<!-- GARDEN -->
 <div
 class="product"
 data-category="coffret"
@@ -1318,7 +1277,7 @@ Demander
 </div>
 </div>
 </div>
-<!-- PRODUCT 3 -->
+<!-- RITUALS -->
 <div
 class="product"
 data-category="rituals"
@@ -1368,7 +1327,7 @@ Demander
 </div>
 </div>
 </div>
-<!-- PRODUCT 4 -->
+<!-- PYJAMA -->
 <div
 class="product"
 data-category="mode"
@@ -1419,9 +1378,7 @@ Demander
 </div>
 </div>
 </section>
-<!-- =========================
-     GIFT
-========================= -->
+<!-- GIFT -->
 <section
 class="gift-section"
 id="cadeau">
@@ -1439,8 +1396,12 @@ Emballage cadeau 🎁
 </h2>
 <p>
 Vous souhaitez offrir votre commande ?
-Nous proposons une possibilité d'emballage cadeau
-élégant avec un message personnalisé.
+Nous proposons un emballage cadeau élégant
+avec un message personnalisé.
+<br><br>
+<strong class="gift-price">
+🎁 Emballage cadeau : +20 DH
+</strong>
 </p>
 <a
 href="#demande"
@@ -1450,9 +1411,7 @@ Ajouter un emballage cadeau
 </div>
 </div>
 </section>
-<!-- =========================
-     REQUEST
-========================= -->
+<!-- REQUEST FORM -->
 <section
 class="request-section"
 id="demande">
@@ -1471,7 +1430,6 @@ Envoyez simplement sa photo et nous vous répondrons
 avec la disponibilité et le prix.
 </p>
 </div>
-<!-- EMAIL FORM -->
 <form
 class="form"
 action="https://formsubmit.co/Najwa.elalaoui2005@gmail.com"
@@ -1479,7 +1437,6 @@ method="POST"
 enctype="multipart/form-data"
 onsubmit="showThankYou()"
 >
-<!-- FORM SUBMIT SETTINGS -->
 <input
 type="hidden"
 name="_subject"
@@ -1500,7 +1457,6 @@ value="Merci pour votre demande chez Luxury Products Maroc ✨ Nous avons bien r
 type="hidden"
 name="_next"
 value="https://luxury-product-maroc-9yrm.vercel.app/">
-<!-- ANTI SPAM -->
 <input
 type="text"
 name="_honey"
@@ -1558,8 +1514,11 @@ accept="image/png,image/jpeg,image/webp">
 <input
 type="checkbox"
 name="Emballage_cadeau"
-value="Oui">
+value="Oui — +20 DH">
 🎁 Je souhaite un emballage cadeau
+<strong class="gift-price">
+(+20 DH)
+</strong>
 </label>
 </div>
 <div class="full">
@@ -1573,9 +1532,7 @@ class="btn btn-dark submit-btn">
 </form>
 </div>
 </section>
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 <section id="contact">
 <div class="section-title">
 <small>
@@ -1655,9 +1612,7 @@ target="_blank">
 </div>
 </div>
 </section>
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 <footer>
 <div class="footer-grid">
 <div>
@@ -1668,7 +1623,7 @@ LUXURY <span>PRODUCTS</span>
 Les meilleurs produits de France 🇫🇷
 et d'Espagne 🇪🇸 sélectionnés pour vous.
 Livraison partout au Maroc 🇲🇦.
-Emballage cadeau disponible 🎁.
+Emballage cadeau disponible 🎁 (+20 DH).
 </p>
 </div>
 <div>
@@ -1717,9 +1672,7 @@ TikTok
 ©️ 2026 Luxury Products Maroc — Tous droits réservés.
 </div>
 </footer>
-<!-- =========================
-     FLOATING BUTTONS
-========================= -->
+<!-- FLOATING BUTTONS -->
 <div class="floating">
 <a
 class="float float-whatsapp"
@@ -1740,9 +1693,7 @@ target="_blank">
 ♪
 </a>
 </div>
-<!-- =========================
-     THANK YOU
-========================= -->
+<!-- THANK YOU -->
 <div
 class="thank-you"
 id="thankYou">
@@ -1767,7 +1718,7 @@ et vous contacter prochainement.
 <p style="margin-top:15px;">
 🇲🇦 Livraison partout au Maroc
 <br>
-🎁 Emballage cadeau disponible
+🎁 Emballage cadeau : +20 DH
 </p>
 <div class="thank-buttons">
 <a
@@ -1784,9 +1735,6 @@ Retour au site
 </div>
 </div>
 </div>
-<!-- =========================
-     JAVASCRIPT
-========================= -->
 <script>
 /* LOADER */
 window.addEventListener("load",function(){
@@ -1871,10 +1819,6 @@ function selectProduct(product){
 }
 /* THANK YOU */
 function showThankYou(){
-    /*
-      On laisse le formulaire se soumettre
-      normalement vers FormSubmit.
-    */
     setTimeout(function(){
         document
         .getElementById("thankYou")
