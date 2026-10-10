@@ -5,82 +5,561 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luxury Products Maroc - 100% Authentique</title>
 <meta name="description" content="Luxury Products Maroc - Produits France Espagne 100% authentique avec facture. Livraison Maroc.">
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Montserrat,sans-serif;background:#fffaf8;color:#241d20}
-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,250,248,.96);border-bottom:1px solid #eee;padding:0 20px;height:75px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:Cormorant Garamond,serif;font-size:26px;letter-spacing:3px}.logo span{color:#b6965d}
-nav{display:flex;gap:20px}nav a{font-size:8px;text-transform:uppercase;letter-spacing:1px}
-.trust{position:fixed;top:75px;left:0;right:0;z-index:999;background:#241d20;color:#d6a4b4;text-align:center;padding:10px;font-size:7px;letter-spacing:1.5px}
-.hero{padding:145px 7% 80px;display:grid;grid-template-columns:1fr 1fr;gap:40px;min-height:90vh;align-items:center}
-.hero h1{font-family:Cormorant Garamond,serif;font-size:70px;line-height:.9}.hero h1 span{color:#b8758b;font-style:italic}
-.btn{padding:14px 22px;border:0;cursor:pointer;font-size:8px;text-transform:uppercase;letter-spacing:1px;display:inline-block}
-.btn-dark{background:#241d20;color:#fff}.btn-light{background:#fff;border:1px solid #ddd}
-.products{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:40px 7%}
-.product{background:#fff;border:1px solid #eee;overflow:hidden}
-.product img{width:100%;height:280px;object-fit:cover}
-.product-info{padding:15px}.price{font-weight:600;margin:10px 0}
-.order{background:#241d20;color:#fff;padding:10px;display:inline-block;font-size:7px;margin-right:5px}
-footer{background:#181415;color:#fff;padding:40px 7%;text-align:center;font-size:8px;margin-top:50px}
-.float-wa{position:fixed;right:16px;bottom:16px;background:#25D366;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px;z-index:5000}
-#avance{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px}
-#avance div{background:#fff;padding:30px;max-width:400px;text-align:center}
-#chatbot{position:fixed;bottom:80px;right:16px;width:320px;background:#fff;border:1px solid #ddd;box-shadow:0 20px 50px rgba(0,0,0,.2);display:none;z-index:7000}
-#chatbox{height:250px;overflow:auto;padding:15px;font-size:9px;background:#fffaf8}
-.chat-btn{position:fixed;bottom:130px;right:16px;width:50px;height:50px;border-radius:50%;background:#b6965d;color:#fff;border:0;font-size:20px;cursor:pointer;z-index:6000}
-@media(max-width:700px){.hero{grid-template-columns:1fr}.products{grid-template-columns:1fr}nav{display:none}}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    background: #fffaf8;
+    color: #241d20;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255, 250, 248, .96);
+    border-bottom: 1px solid #eee;
+    padding: 0 20px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 26px;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: #b6965d;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.trust {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: #241d20;
+    color: #d6a4b4;
+    text-align: center;
+    padding: 10px;
+    font-size: 7px;
+    letter-spacing: 1.5px;
+}
+
+.hero {
+    padding: 145px 7% 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    min-height: 90vh;
+    align-items: center;
+}
+
+.hero h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 70px;
+    line-height: .9;
+}
+
+.hero h1 span {
+    color: #b8758b;
+    font-style: italic;
+}
+
+.btn {
+    padding: 14px 22px;
+    border: 0;
+    cursor: pointer;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-dark {
+    background: #241d20;
+    color: #fff;
+}
+
+.btn-light {
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #241d20;
+}
+
+.products {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    padding: 40px 7%;
+}
+
+.product {
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.product img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-info h3 {
+    overflow-wrap: anywhere;
+}
+
+.price {
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.order {
+    background: #241d20;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    font-size: 7px;
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+footer {
+    background: #181415;
+    color: #fff;
+    padding: 40px 7%;
+    text-align: center;
+    font-size: 8px;
+    margin-top: 50px;
+}
+
+.float-wa {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    background: #25D366;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    text-decoration: none;
+    z-index: 5000;
+}
+
+#avance {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#avance > div {
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#goWa {
+    display: inline-block;
+    text-decoration: none;
+}
+
+#chatbot {
+    position: fixed;
+    bottom: 80px;
+    right: 16px;
+    width: 320px;
+    max-width: calc(100vw - 32px);
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+    display: none;
+    z-index: 7000;
+}
+
+#chatbox {
+    height: 250px;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+    padding: 15px;
+    font-size: 9px;
+    background: #fffaf8;
+}
+
+.chat-btn {
+    position: fixed;
+    bottom: 130px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #b6965d;
+    color: #fff;
+    border: 0;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 6000;
+}
+
+#chatbot input {
+    min-width: 0;
+    outline-color: #b6965d;
+}
+
+#chatbot button {
+    cursor: pointer;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+
+    .trust {
+        padding: 9px 5px;
+        font-size: 6px;
+        letter-spacing: .8px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 145px 7% 50px;
+        gap: 30px;
+        min-height: auto;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero > div:last-child {
+        height: 280px !important;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        padding: 30px 7%;
+        gap: 20px;
+    }
+
+    .product img {
+        height: 280px;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 </style>
 </head>
+
 <body>
-<header><div class="logo">LUXURY <span>PRODUCTS</span></div><nav><a href="#accueil">Accueil</a><a href="#produits">Produits</a><a href="#contact">Contact</a></nav></header>
-<div class="trust">✅ 100% AUTHENTIQUE + FACTURE | ⭐ +500 CLIENTES | 🚚 24-48H | 💳 AVANCE 50% OBLIGATOIRE</div>
+
+<header>
+    <div class="logo">LUXURY <span>PRODUCTS</span></div>
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#produits">Produits</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="trust">
+    ✅ 100% AUTHENTIQUE + FACTURE | ⭐ +500 CLIENTES | 🚚 24-48H | 💳 AVANCE 50% OBLIGATOIRE
+</div>
 
 <section class="hero" id="accueil">
-<div>
-<h1>Le luxe<br><span>accessible.</span></h1>
-<p style="margin:20px 0;font-size:10px;line-height:1.8;color:#666">France 🇫🇷 Espagne 🇪🇸 100% authentique<br>Livraison partout Maroc 🇲🇦<br>Emballage cadeau +20 DH 🎁<br><b>Avance 50% obligatoire</b></p>
-<a href="#produits" class="btn btn-dark">Voir produits</a>
-<a href="https://wa.me/212778231455" class="btn btn-light">WhatsApp</a>
-</div>
-<div style="background:#f8edf0;height:350px;display:flex;align-items:center;justify-content:center;font-family:Cormorant Garamond,serif;font-size:30px">LUXURY COLLECTION</div>
+    <div>
+        <h1>Le luxe<br><span>accessible.</span></h1>
+
+        <p style="margin:20px 0;font-size:10px;line-height:1.8;color:#666">
+            France 🇫🇷 Espagne 🇪🇸 100% authentique<br>
+            Livraison partout Maroc 🇲🇦<br>
+            Emballage cadeau +20 DH 🎁<br>
+            <b>Avance 50% obligatoire</b>
+        </p>
+
+        <a href="#produits" class="btn btn-dark">Voir produits</a>
+        <a href="https://wa.me/212778231455" class="btn btn-light">WhatsApp</a>
+    </div>
+
+    <div style="background:#f8edf0;height:350px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:30px">
+        LUXURY COLLECTION
+    </div>
 </section>
 
 <div id="produits" class="products">
-<div class="product"><img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500"><div class="product-info"><h3>Parfum Diamant 🇪🇸</h3><p>Mercadona - 100% original</p><div class="price">70 DH</div><a class="order" href="https://wa.me/212778231455?text=Bghit Parfum Diamant 70DH - Avance 50% ok">Commander</a></div></div>
-<div class="product"><img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500"><div class="product-info"><h3>Rituals Collection</h3><p>Premium France</p><div class="price">380 DH</div><a class="order" href="https://wa.me/212778231455?text=Bghit Rituals 380DH - Avance 50% ok">Commander</a></div></div>
-<div class="product"><img src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?w=500"><div class="product-info"><h3>Pyjama Primark 🇪🇸</h3><p>Original Espagne</p><div class="price">170 DH</div><a class="order" href="https://wa.me/212778231455?text=Bghit Pyjama Primark 170DH - Avance 50% ok">Commander</a></div></div>
-<div class="product"><img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500"><div class="product-info"><h3>Coffret Garden Bouquet 🎁</h3><p>Idéal cadeau</p><div class="price">199 DH</div><a class="order" href="https://wa.me/212778231455?text=Bghit Coffret Garden 199DH">Commander</a></div></div>
-<div class="product"><img src="https://images.unsplash.com/photo-1588401857491-6d5a5daf4b0e?w=500"><div class="product-info"><h3>Produit sur demande</h3><p>Sifti taswira</p><div class="price">Sur demande</div><a class="order" href="https://wa.me/212778231455">Envoyer photo</a></div></div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=500" alt="Parfum Diamant">
+        <div class="product-info">
+            <h3>Parfum Diamant 🇪🇸</h3>
+            <p>Mercadona - 100% original</p>
+            <div class="price">70 DH</div>
+            <a class="order" href="https://wa.me/212778231455?text=Bghit%20Parfum%20Diamant%2070DH%20-%20Avance%2050%25%20ok">Commander</a>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500" alt="Rituals Collection">
+        <div class="product-info">
+            <h3>Rituals Collection</h3>
+            <p>Premium France</p>
+            <div class="price">380 DH</div>
+            <a class="order" href="https://wa.me/212778231455?text=Bghit%20Rituals%20380DH%20-%20Avance%2050%25%20ok">Commander</a>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1520006403909-838d6b92c22e?w=500" alt="Pyjama Primark">
+        <div class="product-info">
+            <h3>Pyjama Primark 🇪🇸</h3>
+            <p>Original Espagne</p>
+            <div class="price">170 DH</div>
+            <a class="order" href="https://wa.me/212778231455?text=Bghit%20Pyjama%20Primark%20170DH%20-%20Avance%2050%25%20ok">Commander</a>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500" alt="Coffret Garden Bouquet">
+        <div class="product-info">
+            <h3>Coffret Garden Bouquet 🎁</h3>
+            <p>Idéal cadeau</p>
+            <div class="price">199 DH</div>
+            <a class="order" href="https://wa.me/212778231455?text=Bghit%20Coffret%20Garden%20199DH">Commander</a>
+        </div>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1588401857491-6d5a5daf4b0e?w=500" alt="Produit sur demande">
+        <div class="product-info">
+            <h3>Produit sur demande</h3>
+            <p>Sifti taswira</p>
+            <div class="price">Sur demande</div>
+            <a class="order" href="https://wa.me/212778231455">Envoyer photo</a>
+        </div>
+    </div>
+
 </div>
 
-<section id="contact" style="padding:60px 7%;text-align:center;background:#fff"><h2 style="font-family:Cormorant Garamond,serif;font-size:40px">Contact</h2><p style="margin:20px 0;font-size:10px">WhatsApp: +212 778 231 455<br>Email: Najwa.elalaoui2005@gmail.com<br>Instagram: @luxury_product_maroc</p><a href="https://wa.me/212778231455" class="btn btn-dark">WhatsApp Direct</a></section>
+<section id="contact" style="padding:60px 7%;text-align:center;background:#fff">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:40px">Contact</h2>
 
-<footer>©️ 2026 Luxury Products Maroc - 100% Authentique - Avance 50% obligatoire</footer>
+    <p style="margin:20px 0;font-size:10px">
+        WhatsApp: +212 778 231 455<br>
+        Email: Najwa.elalaoui2005@gmail.com<br>
+        Instagram: @luxury_product_maroc
+    </p>
 
-<a href="https://wa.me/212778231455" class="float-wa">💬</a>
+    <a href="https://wa.me/212778231455" class="btn btn-dark">WhatsApp Direct</a>
+</section>
 
-<div id="avance"><div><h3>⚠️ Avance 50% Obligatoire</h3><p style="font-size:10px;margin:15px 0;line-height:1.8">Pour confirmer, avance 50% via Wafacash/CIH. Le reste à la livraison.<br>Pour éviter fausses commandes ❤️</p><button onclick="document.getElementById('avance').style.display='none'" style="background:#eee;border:0;padding:10px 15px">Annuler</button> <a id="goWa" target="_blank" style="background:#241d20;color:#fff;padding:10px 15px;font-size:9px">Confirmer sur WhatsApp</a></div></div>
+<footer>
+    ©️ 2026 Luxury Products Maroc - 100% Authentique - Avance 50% obligatoire
+</footer>
 
-<button class="chat-btn" onclick="document.getElementById('chatbot').style.display='block'">✨</button>
-<div id="chatbot"><div style="background:#241d20;color:#fff;padding:12px;display:flex;justify-content:space-between"><span style="font-size:8px">✨ ASSISTANT IA</span><span onclick="this.parentElement.parentElement.style.display='none'" style="cursor:pointer">✕</span></div><div id="chatbox"><div style="background:#fff;padding:10px;border-radius:8px">Salam! Je suis IA Luxury ✨<br>Questions? Original? Livraison? Avance?</div></div><div style="display:flex"><input id="cin" placeholder="Votre question..." style="flex:1;padding:10px;border:0;font-size:9px" onkeypress="if(event.key==='Enter')send()"><button onclick="send()" style="background:#b6965d;border:0;padding:0 15px">➤</button></div></div>
+<a href="https://wa.me/212778231455" class="float-wa" aria-label="Contacter sur WhatsApp">💬</a>
+
+<div id="avance">
+    <div>
+        <h3>⚠️ Avance 50% Obligatoire</h3>
+
+        <p style="font-size:10px;margin:15px 0;line-height:1.8">
+            Pour confirmer, avance 50% via Wafacash/CIH. Le reste à la livraison.<br>
+            Pour éviter fausses commandes ❤️
+        </p>
+
+        <button
+            type="button"
+            onclick="document.getElementById('avance').style.display='none'"
+            style="background:#eee;border:0;padding:10px 15px;cursor:pointer">
+            Annuler
+        </button>
+
+        <a id="goWa" target="_blank" rel="noopener noreferrer"
+           style="background:#241d20;color:#fff;padding:10px 15px;font-size:9px">
+            Confirmer sur WhatsApp
+        </a>
+    </div>
+</div>
+
+<button
+    type="button"
+    class="chat-btn"
+    aria-label="Ouvrir l'assistant"
+    aria-controls="chatbot"
+    onclick="document.getElementById('chatbot').style.display='block'">
+    ✨
+</button>
+
+<div id="chatbot">
+    <div style="background:#241d20;color:#fff;padding:12px;display:flex;justify-content:space-between">
+        <span style="font-size:8px">✨ ASSISTANT IA</span>
+
+        <button
+            type="button"
+            aria-label="Fermer l'assistant"
+            onclick="document.getElementById('chatbot').style.display='none'"
+            style="background:none;border:0;color:#fff;cursor:pointer">
+            ✕
+        </button>
+    </div>
+
+    <div id="chatbox" aria-live="polite">
+        <div style="background:#fff;padding:10px;border-radius:8px">
+            Salam! Je suis IA Luxury ✨<br>
+            Questions? Original? Livraison? Avance?
+        </div>
+    </div>
+
+    <div style="display:flex">
+        <input
+            id="cin"
+            type="text"
+            placeholder="Votre question..."
+            aria-label="Votre question"
+            style="flex:1;padding:10px;border:0;font-size:9px"
+            onkeydown="if(event.key==='Enter')send()">
+
+        <button
+            type="button"
+            onclick="send()"
+            aria-label="Envoyer le message"
+            style="background:#b6965d;border:0;padding:0 15px">
+            ➤
+        </button>
+    </div>
+</div>
 
 <script>
-function send(){
-let i=document.getElementById('cin');let m=i.value.trim();if(!m)return;
-let b=document.getElementById('chatbox');b.innerHTML+=`<div style="text-align:right;margin:8px 0"><span style="background:#241d20;color:#fff;padding:6px 10px;border-radius:10px">${m}</span></div>`;
-let r="Merci! Ecris-nous WhatsApp +212 778231455 💬";
-m=m.toLowerCase();
-if(m.includes('original')) r="100% AUTHENTIQUE avec facture France/Espagne! ✅";
-else if(m.includes('livraison')) r="Meknès 20DH, Casa/Rabat 35DH, autres 45DH - 24/48h 🚚";
-else if(m.includes('avance')) r="Avance 50% Wafacash/CIH obligatoire - reste à la livraison 💳";
-b.innerHTML+=`<div style="margin:8px 0"><span style="background:#fff;border:1px solid #eee;padding:6px 10px;border-radius:10px;display:inline-block">${r}</span></div>`;
-b.scrollTop=b.scrollHeight;i.value="";
+"use strict";
+
+function send() {
+    const input = document.getElementById("cin");
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    const chatbox = document.getElementById("chatbox");
+
+    // Afficher le message comme texte, sans interpréter du HTML.
+    const userRow = document.createElement("div");
+    userRow.style.cssText = "text-align:right;margin:8px 0";
+
+    const userBubble = document.createElement("span");
+    userBubble.style.cssText =
+        "background:#241d20;color:#fff;padding:6px 10px;border-radius:10px;display:inline-block;max-width:100%;overflow-wrap:anywhere";
+    userBubble.textContent = message;
+
+    userRow.appendChild(userBubble);
+    chatbox.appendChild(userRow);
+
+    let response = "Merci! Ecris-nous WhatsApp +212 778231455 💬";
+    const normalizedMessage = message.toLowerCase();
+
+    if (normalizedMessage.includes("original")) {
+        response = "100% AUTHENTIQUE avec facture France/Espagne! ✅";
+    } else if (normalizedMessage.includes("livraison")) {
+        response = "Meknès 20DH, Casa/Rabat 35DH, autres 45DH - 24/48h 🚚";
+    } else if (normalizedMessage.includes("avance")) {
+        response = "Avance 50% Wafacash/CIH obligatoire - reste à la livraison 💳";
+    }
+
+    const botRow = document.createElement("div");
+    botRow.style.margin = "8px 0";
+
+    const botBubble = document.createElement("span");
+    botBubble.style.cssText =
+        "background:#fff;border:1px solid #eee;padding:6px 10px;border-radius:10px;display:inline-block;max-width:100%;overflow-wrap:anywhere";
+    botBubble.textContent = response;
+
+    botRow.appendChild(botBubble);
+    chatbox.appendChild(botRow);
+
+    chatbox.scrollTop = chatbox.scrollHeight;
+    input.value = "";
+    input.focus();
 }
-document.querySelectorAll('.order').forEach(a=>{
-a.addEventListener('click',e=>{
-e.preventDefault();document.getElementById('goWa').href=a.href;document.getElementById('avance').style.display='flex';
-})
-})
+
+// Confirmation avant d'ouvrir WhatsApp pour les commandes.
+document.querySelectorAll(".order").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        document.getElementById("goWa").href = link.href;
+        document.getElementById("avance").style.display = "flex";
+    });
+});
 </script>
+
 </body>
 </html>
